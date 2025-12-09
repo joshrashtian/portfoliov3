@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Gabarito, Lexend } from "next/font/google";
+import { Gabarito, Lexend, Nunito } from "next/font/google";
 import "./globals.css";
 
-const gabarito = Gabarito({
+const gabarito = Nunito({
   variable: "--font-gabarito",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],

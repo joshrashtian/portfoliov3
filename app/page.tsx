@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import About from "./(components)/homepage/about";
 import Tilt from "react-parallax-tilt";
+import { Projects } from "./(components)/homepage/projects";
+import { IoLogoGithub } from "react-icons/io5";
+import Link from "next/link";
 
 export default function Home() {
   const sectionRefMap = useRef<{ [key: string]: HTMLDivElement | null }>({
@@ -32,36 +35,37 @@ export default function Home() {
     <div className="flex min-h-screen items-center justify-center font-lexend dark:bg-black">
       <main className="w-full max-w-7xl">
         <motion.div
-          className="flex min-h-screen h-full relative  flex-col items-center justify-start py-16 px-16 bg-white dark:bg-black sm:items-start"
+          className="flex min-h-screen  h-full relative  flex-col-reverse items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start"
           ref={(el) => assignRef("home", el as HTMLDivElement)}
         >
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 3, type: "spring" }}
-            className="absolute z-50 left-0 bottom-24 w-2xl max-w-2xl h-2 bg-orange-400"
+            className="absolute left-0 bottom-12 w-2xl max-w-2xl h-2 bg-orange-400"
           />
-          <header className="flex flex-row w-full items-center justify-between">
-            <motion.h1 className="text-4xl max-w-2xl font-bold">
-              Joshua Rashtian.
-            </motion.h1>
-            <div className="mt-8 text-right">
-              <h2 className="text-2xl font-bold">Los Angeles, CA</h2>
-              <h3 className="text-lg text-gray-500">Software Engineer</h3>
+          <footer className="flex flex-row w-full pb-20 items-center justify-between">
+            <div>
+              <motion.h1 className="text-4xl max-w-2xl font-bold">
+                Joshua Rashtian.
+              </motion.h1>
+              <p>
+                Embracing the revolution, whether it be in code and philosophy.
+              </p>
+              <ol className="flex flex-row gap-2">
+                <Link
+                  className="text-2xl flex flex-row gap-2 justify-center items-center"
+                  href="https://github.com/joshrashtian"
+                >
+                  <IoLogoGithub />
+                </Link>
+              </ol>
             </div>
-          </header>
-          <p>Embracing the revolution, whether it be in code and philosophy.</p>
-          <div className="grid grid-cols-3 w-full h-full gap-4">
-            <Tilt>
-              <div className="col-span-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-4"></div>
-            </Tilt>
-            <Tilt>
-              <div className="col-span-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-4"></div>
-            </Tilt>
-            <Tilt>
-              <div className="col-span-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-4"></div>
-            </Tilt>
-          </div>
+          </footer>
+          <ol className="mt-8 absolute text-right right-0 top-0">
+            <h2 className="text-2xl font-bold">Los Angeles, CA</h2>
+            <h3 className="text-lg text-gray-500">Software Engineer</h3>
+          </ol>
         </motion.div>
         <div
           className="h-screen flex items-center justify-center  "
@@ -69,11 +73,12 @@ export default function Home() {
         >
           <About />
         </div>
+
         <div
           className="h-screen flex items-center justify-center  "
-          ref={(el) => assignRef("contact", el as HTMLDivElement)}
+          ref={(el) => assignRef("projects", el as HTMLDivElement)}
         >
-          <h2>Contact</h2>
+          <Projects />
         </div>
       </main>
       <Navigation navTo={navTo} />
