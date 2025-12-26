@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import { forwardRef } from "react";
+import { GitHubCalendar } from "react-github-calendar";
 
 export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
   return (
-    <div
-      className="h-screen flex-col flex items-center justify-center"
-      ref={ref}
-    >
+    <div className=" flex-col flex items-center justify-center" ref={ref}>
       <h2 className="text-7xl font-black">Projects</h2>
       <button>
         <p className="text-5xl font-bold">MESAConnect</p>

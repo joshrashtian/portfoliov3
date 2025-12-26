@@ -7,8 +7,14 @@ import { motion } from "motion/react";
 import About from "./(components)/homepage/about";
 import Tilt from "react-parallax-tilt";
 import { Projects } from "./(components)/homepage/projects";
-import { IoLogoGithub } from "react-icons/io5";
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoInstagram,
+  IoLocationOutline,
+} from "react-icons/io5";
 import Link from "next/link";
+import ProjectMenu from "./(components)/homepage/projectMenu";
 
 export default function Home() {
   const sectionRefMap = useRef<{ [key: string]: HTMLDivElement | null }>({
@@ -32,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center font-lexend dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center font-neue dark:bg-black">
       <main className="w-full max-w-7xl">
         <motion.div
           className="flex min-h-screen  h-full relative  flex-col-reverse items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start"
@@ -51,19 +57,36 @@ export default function Home() {
               </motion.h1>
               <p>
                 Embracing the revolution, whether it be in code and philosophy.
+                <br /> Full Stack Engineer and Computer Engineering and Science
+                Student based in Los Angeles.
               </p>
-              <ol className="flex flex-row gap-2">
+              <ol className="flex mt-2 flex-row gap-2">
                 <Link
-                  className="text-2xl flex flex-row gap-2 justify-center items-center"
+                  className="text-4xl flex flex-row gap-2 justify-center items-center"
                   href="https://github.com/joshrashtian"
                 >
                   <IoLogoGithub />
+                </Link>
+
+                <Link
+                  className="text-4xl flex flex-row gap-2 justify-center items-center"
+                  href="https://www.linkedin.com/in/joshrashtian/"
+                >
+                  <IoLogoLinkedin />
+                </Link>
+                <Link
+                  className="text-4xl flex flex-row gap-2 justify-center items-center"
+                  href="https://www.instagram.com/joshuajrashtian/"
+                >
+                  <IoLogoInstagram />
                 </Link>
               </ol>
             </div>
           </footer>
           <ol className="mt-8 absolute text-right right-0 top-0">
-            <h2 className="text-2xl font-bold">Los Angeles, CA</h2>
+            <h2 className="text-2xl flex flex-row gap-2 justify-center items-center font-bold">
+              <IoLocationOutline className="text-2xl" /> Los Angeles, CA
+            </h2>
             <h3 className="text-lg text-gray-500">Software Engineer</h3>
           </ol>
         </motion.div>
@@ -78,7 +101,7 @@ export default function Home() {
           className="h-screen flex items-center justify-center  "
           ref={(el) => assignRef("projects", el as HTMLDivElement)}
         >
-          <Projects />
+          <ProjectMenu />
         </div>
       </main>
       <Navigation navTo={navTo} />
