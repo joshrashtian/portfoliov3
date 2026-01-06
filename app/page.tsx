@@ -91,14 +91,14 @@ export default function Home() {
           </ol>
         </motion.div>
         <div
-          className="h-screen flex items-center justify-center  "
+          className="h-full flex items-center justify-center  "
           ref={(el) => assignRef("about", el as HTMLDivElement)}
         >
           <About />
         </div>
 
         <div
-          className="h-screen flex items-center justify-center  "
+          className="h-screen   "
           ref={(el) => assignRef("projects", el as HTMLDivElement)}
         >
           <ProjectMenu />

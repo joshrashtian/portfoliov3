@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Gabarito, Lexend, Nunito } from "next/font/google";
+import {
+  Gabarito,
+  Google_Sans_Code,
+  JetBrains_Mono,
+  Lexend,
+  Nunito,
+  Space_Mono,
+} from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -47,6 +54,13 @@ const neue = localFont({
   display: "swap",
 });
 
+const mono = Google_Sans_Code({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Joshua Rashtian | Software Engineer",
   description: "Joshua Rashtian's personal website",
@@ -62,7 +76,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${neue.className} antialiased`}>{children}</body>
+      <body className={`${neue.className} ${mono.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
