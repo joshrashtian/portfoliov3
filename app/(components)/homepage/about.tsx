@@ -67,11 +67,11 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } =
 
 const About = () => {
   return (
-    <div className="w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden">
+    <div className="w-full p-4 sm:p-6 lg:p-8 ">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
         About Me
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-3 w-full min-h-[400px] lg:h-[600px] gap-4 sm:gap-6 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-3 w-full min-h-[400px] lg:h-[600px] gap-4 sm:gap-6 ">
         <Tilt
           tiltAngleXInitial={0}
           tiltAngleYInitial={0}
