@@ -1,10 +1,12 @@
 "use client";
+import { useScroll, useTransform, useMotionValueEvent } from "motion/react";
 import Link from "next/link";
-import React from "react";
+import React, { useRef, useState } from "react";
+import { motion } from "motion/react";
 
 const Navigation = ({ navTo }: { navTo: (section: string) => void }) => {
   return (
-    <nav className="fixed p-4 left-1/2 -translate-x-1/2 bottom-8 w-[600px] rounded-3xl bg-zinc-50/50 backdrop-blur-2xl border-4 border-white dark:border-zinc-700 shadow-2xl shadow-black/20 dark:shadow-black/40 flex justify-center items-center gap-6 font-gabarito">
+    <nav className="fixed top-4 border-b border-gray-300 border-dashed dark:border-gray-800 left-12  h-16 flex justify-center items-center gap-6 font-mono ">
       <button
         className="text-2xl cursor-pointer "
         onClick={() => navTo("home")}
