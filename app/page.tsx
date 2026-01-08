@@ -62,6 +62,7 @@ export default function Home() {
               </p>
               <ol className="flex mt-2 flex-row gap-2">
                 <Link
+                  target="_blank"
                   className="text-4xl flex flex-row gap-2 justify-center items-center"
                   href="https://github.com/joshrashtian"
                 >
@@ -69,12 +70,14 @@ export default function Home() {
                 </Link>
 
                 <Link
+                  target="_blank"
                   className="text-4xl flex flex-row gap-2 justify-center items-center"
                   href="https://www.linkedin.com/in/joshrashtian/"
                 >
                   <IoLogoLinkedin />
                 </Link>
                 <Link
+                  target="_blank"
                   className="text-4xl flex flex-row gap-2 justify-center items-center"
                   href="https://www.instagram.com/joshuajrashtian/"
                 >
