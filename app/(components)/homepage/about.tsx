@@ -20,6 +20,7 @@ import {
   SiLinux,
 } from "react-icons/si";
 import { FaJava, FaWindows } from "react-icons/fa";
+import Globe from "./globe";
 
 export const Skillset = {
   languages: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"],
@@ -72,7 +73,7 @@ const About = () => {
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
         About Me
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-3 w-full min-h-[600px] lg:h-[900px] gap-4 sm:gap-6 ">
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-3 w-full min-h-[900px] gap-4 sm:gap-6 ">
         <div className="h-full relative lg:row-span-1 lg:col-span-1 w-full min-h-[200px] lg:min-h-0 overflow-hidden">
           <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6 flex flex-col justify-center overflow-hidden">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 wrap-break-word">
@@ -189,6 +190,14 @@ const About = () => {
           </div>
         </div>
 
+        <div className="h-full w-full lg:col-span-4 lg:row-span-2 min-h-[400px] lg:min-h-0 overflow-hidden">
+          <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6  overflow-x-hidden">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-4 sm:mb-6">
+              Los Angeles, CA
+            </h1>
+            <Globe />
+          </div>
+        </div>
         <div className="h-full w-full lg:col-span-4 lg:row-span-2 min-h-[400px] lg:min-h-0 overflow-hidden">
           <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6  overflow-x-hidden">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-4 sm:mb-6">

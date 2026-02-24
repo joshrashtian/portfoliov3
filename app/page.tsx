@@ -41,7 +41,7 @@ export default function Home() {
     <div className="flex min-h-screen items-center justify-center font-neue dark:bg-black">
       <main className="w-full max-w-7xl">
         <motion.div
-          className="flex min-h-screen  h-full relative  flex-col-reverse items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start"
+          className="flex min-h-screen  h-full relative  flex-col-reverse items-center justify-between py-16 px-16  dark:bg-black sm:items-start"
           ref={(el) => assignRef("home", el as HTMLDivElement)}
         >
           <motion.div
@@ -86,7 +86,7 @@ export default function Home() {
               </ol>
             </div>
           </footer>
-          <ol className="mt-8 absolute text-right right-0 top-0">
+          <ol className="mt-8 absolute text-right right-0 top-24">
             <h2 className="text-2xl flex flex-row gap-2 justify-center items-center font-bold">
               <IoLocationOutline className="text-2xl" /> Los Angeles, CA
             </h2>

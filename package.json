@@ -13,6 +13,7 @@
     "@notion-render/client": "^0.0.2",
     "@notion-render/hljs-plugin": "^0.0.2",
     "@notionhq/client": "^2.2.15",
+    "cobe": "^0.6.5",
     "motion": "^12.23.24",
     "next": "16.0.10",
     "notion": "^0.0.1",
