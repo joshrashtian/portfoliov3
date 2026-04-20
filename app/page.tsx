@@ -11,6 +11,7 @@ import {
 } from "react-icons/io5";
 import Link from "next/link";
 import ProjectMenu from "./(components)/homepage/projectMenu";
+import JoshuaTree from "./(components)/svgs/JoshuaTree";
 
 export default function Home() {
   const sectionRefMap = useRef<{ [key: string]: HTMLDivElement | null }>({
@@ -45,7 +46,7 @@ export default function Home() {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 3, type: "spring" }}
-            className="absolute left-0 bottom-12 w-2xl max-w-2xl h-2 bg-orange-400"
+            className="pointer-events-none absolute left-0 bottom-12 z-[1] h-2 max-w-2xl w-2xl bg-gradient-to-r from-orange-400 via-orange-400 to-orange-400/0"
           />
           <ol className="text-left sm:text-right sm:absolute sm:right-0 sm:top-24 w-full sm:w-auto">
             <h2 className="text-2xl flex flex-row gap-2 justify-start sm:justify-center items-center font-bold">
@@ -54,15 +55,15 @@ export default function Home() {
             <h3 className="text-lg text-gray-500">Software Engineer</h3>
           </ol>
 
-          <footer className="flex flex-row w-full pb-10 sm:pb-20 items-center justify-between sm:mt-0">
-            <div>
-              <motion.h1 className="text-4xl font-climate-crisis sm:text-5xl max-w-2xl leading-tight">
+          <footer className="relative z-10 mt-auto flex w-full flex-col-reverse items-center gap-10 pb-10 sm:mt-0 sm:flex-row sm:items-end sm:justify-between sm:gap-6 sm:pb-16 lg:gap-10">
+            <div className="w-full max-w-2xl flex-1 min-w-0 sm:w-auto">
+              <motion.h1 className="text-7xl w-32 font-climate-crisis max-w-2xl leading-tight">
                 Joshua Rashtian.
               </motion.h1>
               <p className="text-base sm:text-base leading-relaxed max-w-lg mt-2">
                 Embracing the revolution, whether it be in code and philosophy.
-                <br /> Full Stack Engineer and Computer Engineering and Science
-                Student based in Los Angeles.
+                <br /> Full Stack Engineer + Computer Science Student based in
+                Los Angeles / San Luis Obispo.
               </p>
               <ol className="flex mt-3 sm:mt-2 flex-row gap-3 sm:gap-2">
                 <Link
@@ -89,7 +90,9 @@ export default function Home() {
                 </Link>
               </ol>
             </div>
-            {/* joshua tree svg */}
+            <div className="relative flex w-full max-w-[15rem] shrink-0 flex-col items-center justify-end sm:max-w-none sm:w-[min(42vw,22rem)] sm:items-end lg:w-[min(36vw,26rem)]">
+              <JoshuaTree className="h-auto w-full text-zinc-950 mix-blend-multiply dark:mix-blend-normal dark:text-orange-400/75 [filter:drop-shadow(0_1px_0_rgba(0,0,0,0.06))] max-sm:max-h-48" />
+            </div>
           </footer>
         </motion.div>
         <div
