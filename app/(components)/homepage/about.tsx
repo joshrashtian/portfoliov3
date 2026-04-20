@@ -80,7 +80,8 @@ const About = () => {
               Joshua Rashtian
             </h4>
             <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 wrap-break-word">
-              Computer Engineering Student at College of the Canyons.
+              Computer Science Student at California Polytechnic State
+              University, San Luis Obispo.
             </p>
           </div>
         </div>

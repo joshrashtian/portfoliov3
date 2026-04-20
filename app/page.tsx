@@ -1,12 +1,8 @@
 "use client";
-import Image from "next/image";
 import Navigation from "./(components)/nav";
 import { useRef } from "react";
-import { useEffect } from "react";
 import { motion } from "motion/react";
 import About from "./(components)/homepage/about";
-import Tilt from "react-parallax-tilt";
-import { Projects } from "./(components)/homepage/projects";
 import {
   IoLogoGithub,
   IoLogoLinkedin,
@@ -20,6 +16,7 @@ export default function Home() {
   const sectionRefMap = useRef<{ [key: string]: HTMLDivElement | null }>({
     home: null,
     about: null,
+    experience: null,
     contact: null,
   });
 
@@ -38,10 +35,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center font-neue dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
       <main className="w-full max-w-7xl">
         <motion.div
-          className="flex min-h-screen  h-full relative  flex-col-reverse items-center justify-between py-16 px-16  dark:bg-black sm:items-start"
+          className="flex min-h-screen h-full relative flex-col-reverse items-start justify-start sm:justify-between gap-10 sm:gap-0 pt-36 sm:pt-16 pb-16 sm:pb-16 px-6 sm:px-16 dark:bg-black"
           ref={(el) => assignRef("home", el as HTMLDivElement)}
         >
           <motion.div
@@ -50,17 +47,24 @@ export default function Home() {
             transition={{ duration: 3, type: "spring" }}
             className="absolute left-0 bottom-12 w-2xl max-w-2xl h-2 bg-orange-400"
           />
-          <footer className="flex flex-row w-full pb-20 items-center justify-between">
+          <ol className="text-left sm:text-right sm:absolute sm:right-0 sm:top-24 w-full sm:w-auto">
+            <h2 className="text-2xl flex flex-row gap-2 justify-start sm:justify-center items-center font-bold">
+              <IoLocationOutline className="text-2xl" /> Los Angeles, CA
+            </h2>
+            <h3 className="text-lg text-gray-500">Software Engineer</h3>
+          </ol>
+
+          <footer className="flex flex-row w-full pb-10 sm:pb-20 items-center justify-between sm:mt-0">
             <div>
-              <motion.h1 className="text-4xl max-w-2xl font-bold">
+              <motion.h1 className="text-4xl font-climate-crisis sm:text-5xl max-w-2xl leading-tight">
                 Joshua Rashtian.
               </motion.h1>
-              <p>
+              <p className="text-base sm:text-base leading-relaxed max-w-lg mt-2">
                 Embracing the revolution, whether it be in code and philosophy.
                 <br /> Full Stack Engineer and Computer Engineering and Science
                 Student based in Los Angeles.
               </p>
-              <ol className="flex mt-2 flex-row gap-2">
+              <ol className="flex mt-3 sm:mt-2 flex-row gap-3 sm:gap-2">
                 <Link
                   target="_blank"
                   className="text-4xl flex flex-row gap-2 justify-center items-center"
@@ -85,13 +89,8 @@ export default function Home() {
                 </Link>
               </ol>
             </div>
+            {/* joshua tree svg */}
           </footer>
-          <ol className="mt-8 absolute text-right right-0 top-24">
-            <h2 className="text-2xl flex flex-row gap-2 justify-center items-center font-bold">
-              <IoLocationOutline className="text-2xl" /> Los Angeles, CA
-            </h2>
-            <h3 className="text-lg text-gray-500">Software Engineer</h3>
-          </ol>
         </motion.div>
         <div
           className="h-full flex items-center justify-center  "
@@ -102,7 +101,7 @@ export default function Home() {
 
         <div
           className="h-screen   "
-          ref={(el) => assignRef("projects", el as HTMLDivElement)}
+          ref={(el) => assignRef("experience", el as HTMLDivElement)}
         >
           <ProjectMenu />
         </div>

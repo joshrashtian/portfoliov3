@@ -4,6 +4,7 @@ import React, { forwardRef, useState } from "react";
 import MESAIcon from "../../(assets)/MESA.jpg";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "motion/react";
+import HACKMESAIcon from "../../(assets)/images/hackmesa.png";
 
 export const WorkExperience = forwardRef<HTMLDivElement, object>(
   (props, ref) => {
@@ -20,6 +21,63 @@ export const WorkExperience = forwardRef<HTMLDivElement, object>(
         <h2 className="text-4xl sm:text-5xl xl:text-6xl font-black text-left w-full">
           Work Experience
         </h2>
+        <section className="flex flex-col group overflow-hidden w-full xl:flex-row duration-500 p-3 sm:p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-4 sm:gap-2 items-center justify-center">
+          <Image
+            src={HACKMESAIcon}
+            alt="HACKMESA"
+            className="rounded-lg object-cover w-full sm:w-48 xl:w-60 h-auto"
+            width={240}
+            height={240}
+          />
+          <div className="w-full xl:w-3/4 flex flex-col items-center xl:items-end justify-center h-full p-3 sm:p-5">
+            <h4 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-center xl:text-left w-full">
+              HACKMESA
+            </h4>
+            <p className="text-lg sm:text-xl font-mono dark:text-blue-500 text-blue-600 text-center xl:text-left w-full">
+              Lead Backend Engineer + Announcer
+            </p>
+            <p className="text-base sm:text-lg text-gray-500 dark:text-zinc-300 text-center xl:text-left w-full">
+              Los Angeles City College / Los Angeles Athletics Club
+            </p>
+            <p className="text-base sm:text-lg dark:text-zinc-300 text-gray-500 text-center xl:text-left w-full">
+              December 2025 - April 2026
+            </p>
+            <button
+              onClick={() => setOpen(!open)}
+              className="flex flex-row gap-2 items-center justify-center mt-2"
+            >
+              <IoIosArrowDown className={`${open ? "rotate-180" : ""}`} />
+              <p>{open ? "Hide Details" : "View Details"}</p>
+            </button>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-lg flex flex-col gap-2 w-full mt-2"
+            >
+              <ol className="flex flex-col bullet-list text-wrap w-full gap-2 p-4 sm:p-5 sm:px-10">
+                <li className="list-disc">
+                  Lead Backend Engineer for HACKMESA 2.0, an MLH-affiliated
+                  hackathon hosted by Los Angeles City College drawing 35 teams
+                  and 100+ participants from 20+ community colleges across
+                  California.
+                </li>
+                <li className="list-disc">
+                  Sponsors including Riot Games, Hologram, Pure Buttons and
+                  more.
+                </li>
+                <li className="list-disc">
+                  Sole COC representative on the engineering team, built and
+                  maintained backend systems supporting registration, the
+                  participant portal, and event logistics.
+                </li>
+                <li className="list-disc">
+                  Served as event announcer for opening and closing ceremonies.
+                </li>
+              </ol>
+            </motion.div>
+          </div>
+        </section>
         <section className="flex flex-col group overflow-hidden w-full xl:flex-row duration-500 p-3 sm:p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-4 sm:gap-2 items-center justify-center">
           <Image
             src={MESAIcon}
@@ -75,7 +133,7 @@ export const WorkExperience = forwardRef<HTMLDivElement, object>(
         </section>
       </div>
     );
-  }
+  },
 );
 
 WorkExperience.displayName = "WorkExperience";

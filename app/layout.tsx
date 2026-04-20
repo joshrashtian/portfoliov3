@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  Climate_Crisis,
   Gabarito,
   Google_Sans_Code,
   JetBrains_Mono,
@@ -50,7 +51,7 @@ const neue = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-neue",
+  variable: "--font-neue-local",
   display: "swap",
 });
 
@@ -58,6 +59,19 @@ const mono = Google_Sans_Code({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+});
+
+const editundo = localFont({
+  src: "./(assets)/fonts/editundo.ttf",
+  variable: "--font-editundo",
+  display: "swap",
+});
+
+const climate_crisis = Climate_Crisis({
+  variable: "--font-climate-crisis-google",
+  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -76,7 +90,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${neue.className} ${mono.variable} antialiased`}>
+      <body
+        className={`${neue.variable} ${mono.variable} ${climate_crisis.variable} ${editundo.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

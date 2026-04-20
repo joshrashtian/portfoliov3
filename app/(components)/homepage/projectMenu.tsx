@@ -19,34 +19,34 @@ const ProjectMenu = () => {
   };
 
   return (
-    <div className="w-full origin-top ">
-      <header className="flex flex-row w-3/4 mx-auto justify-center items-center lg:w-full gap-4">
+    <div className="w-full origin-top pt-20 ">
+      <header className="flex flex-row font-header w-3/4 mx-auto justify-center items-center lg:w-full gap-0.5">
         <button
-          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 rounded-lg p-4 transition-all duration-300 ${
+          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 -skew-x-40 p-4 transition-all duration-300 ${
             activeTab === "projects"
-              ? "ring-2 ring-blue-500 dark:ring-blue-400 scale-105"
+              ? "ring-2 ring-red-500 z-30 dark:ring-red-400 scale-105"
               : "opacity-70 hover:opacity-100"
           }`}
           onClick={() => handleTabChange("projects")}
         >
           <p
-            className={`font-medium transition-colors duration-300 ${
-              activeTab === "projects" ? "text-blue-600 dark:text-blue-400" : ""
+            className={`font-medium skew-x-40 transition-colors duration-300 ${
+              activeTab === "projects" ? "text-red-600 dark:text-red-400" : ""
             }`}
           >
             Projects
           </p>
         </button>
         <button
-          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 rounded-lg p-4 transition-all duration-300 ${
+          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 -skew-x-40 p-4 transition-all duration-300 ${
             activeTab === "workExperience"
-              ? "ring-2 ring-blue-500 dark:ring-blue-400 scale-105"
+              ? "ring-2 ring-blue-500 z-30 dark:ring-blue-400 scale-105"
               : "opacity-70 hover:opacity-100"
           }`}
           onClick={() => handleTabChange("workExperience")}
         >
           <p
-            className={`font-medium transition-colors duration-300 ${
+            className={`font-medium skew-x-40 transition-colors duration-300 ${
               activeTab === "workExperience"
                 ? "text-blue-600 dark:text-blue-400"
                 : ""
@@ -56,17 +56,17 @@ const ProjectMenu = () => {
           </p>
         </button>
         <button
-          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 rounded-lg p-4 transition-all duration-300 ${
+          className={`bg-zinc-100 w-1/3 dark:bg-zinc-900 -skew-x-40 p-4 transition-all duration-300 ${
             activeTab === "education"
-              ? "ring-2 ring-blue-500 dark:ring-blue-400 scale-105"
+              ? "ring-2 ring-green-500 z-30  dark:ring-green-400 scale-105"
               : "opacity-70 hover:opacity-100"
           }`}
           onClick={() => handleTabChange("education")}
         >
           <p
-            className={`font-medium transition-colors duration-300 ${
+            className={`font-medium skew-x-40 transition-colors duration-300 ${
               activeTab === "education"
-                ? "text-blue-600 dark:text-blue-400"
+                ? "text-green-600 dark:text-green-400"
                 : ""
             }`}
           >
