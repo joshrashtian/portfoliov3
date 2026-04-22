@@ -8,6 +8,7 @@ import {
   IoLogoLinkedin,
   IoLogoInstagram,
   IoLocationOutline,
+  IoDocumentTextOutline,
 } from "react-icons/io5";
 import Link from "next/link";
 import ProjectMenu from "./(components)/homepage/projectMenu";
@@ -62,8 +63,8 @@ export default function Home() {
               </motion.h1>
               <p className="text-base sm:text-base leading-relaxed max-w-lg mt-2">
                 Embracing the revolution, whether it be in code and philosophy.
-                <br /> Full Stack Engineer + Computer Science Student based in
-                Los Angeles / San Luis Obispo.
+                <br /> Full Stack Engineer + Computer Science Student with 3
+                years of experience based in Los Angeles / San Luis Obispo.
               </p>
               <ol className="flex mt-3 sm:mt-2 flex-row gap-3 sm:gap-2">
                 <Link
@@ -88,6 +89,14 @@ export default function Home() {
                 >
                   <IoLogoInstagram />
                 </Link>
+                <Link
+                  href="/resume.pdf"
+                  target="_blank"
+                  className="text-xl font-header -skew-x-12 bg-zinc-100 dark:bg-zinc-900 rounded-lg p-2 flex flex-row gap-2 justify-center items-center hover:scale-105 transition-all duration-300"
+                >
+                  <IoDocumentTextOutline className="text-3xl skew-x-12" />
+                  <span className="skew-x-12">Resume</span>
+                </Link>
               </ol>
             </div>
             <div className="relative flex w-full max-w-[15rem] shrink-0 flex-col items-center justify-end sm:max-w-none sm:w-[min(42vw,22rem)] sm:items-end lg:w-[min(36vw,26rem)]">
@@ -103,12 +112,19 @@ export default function Home() {
         </div>
 
         <div
-          className="h-screen   "
+          className="h-fit   "
           ref={(el) => assignRef("experience", el as HTMLDivElement)}
         >
           <ProjectMenu />
         </div>
+        <div
+          className="h-screen w-full pt-20"
+          ref={(el) => assignRef("contact", el as HTMLDivElement)}
+        >
+          <h1 className="text-6xl font-climate-crisis font-bold">Contact Me</h1>
+        </div>
       </main>
+
       <Navigation navTo={navTo} />
     </div>
   );

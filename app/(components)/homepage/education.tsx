@@ -59,15 +59,6 @@ const Education = () => {
                   </li>
                 ))}
               </ol>
-              <ol className="flex flex-col bullet-list text-wrap w-1/2 gap-2 p-4 sm:p-5 sm:px-10">
-                <h2 className="text-lg font-bold">Clubs, Awards, Activities</h2>
-                <li className="list-disc">
-                  Founding Member and President of COC Tech Club, pushing it to
-                  the highest attendance in the club&apos;s history.
-                </li>
-                <li className="list-disc">MESA Staff Member & Tutor</li>
-                <li className="list-disc">GPA of 3.6 (Honors)</li>
-              </ol>
             </motion.ol>
           </div>
         </div>

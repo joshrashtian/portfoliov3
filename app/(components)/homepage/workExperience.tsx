@@ -18,7 +18,7 @@ export const WorkExperience = forwardRef<HTMLDivElement, object>(
         className=" flex-col flex p-3 sm:p-5 items-center justify-center gap-5"
         ref={ref}
       >
-        <h2 className="text-4xl sm:text-5xl xl:text-6xl font-black text-left w-full">
+        <h2 className="text-4xl sm:text-5xl xl:text-6xl font-black font-climate-crisis text-left w-full">
           Work Experience
         </h2>
         <section className="flex flex-col group overflow-hidden w-full xl:flex-row duration-500 p-3 sm:p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-4 sm:gap-2 items-center justify-center">

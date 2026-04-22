@@ -21,7 +21,9 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
       className=" flex-col flex p-5 items-center justify-center gap-5"
       ref={ref}
     >
-      <h2 className="text-6xl font-black text-left w-full">Projects</h2>
+      <h2 className="text-6xl font-black font-climate-crisis text-left w-full">
+        Projects
+      </h2>
       <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
         <Image
           src={MESAConnectImage}

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Tilt from "react-parallax-tilt";
 import {
   SiJavascript,
   SiTypescript,
@@ -21,6 +20,8 @@ import {
 } from "react-icons/si";
 import { FaJava, FaWindows } from "react-icons/fa";
 import Globe from "./globe";
+import LAACImage from "../../(assets)/images/LAAC.jpg";
+import Image from "next/image";
 
 export const Skillset = {
   languages: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"],
@@ -69,27 +70,39 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } =
 const About = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string>("C++");
   return (
-    <div className="w-full p-4 sm:p-6 lg:p-8 ">
+    <div className="w-full max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
         About Me
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-3 w-full min-h-[900px] gap-4 sm:gap-6 ">
-        <div className="h-full relative lg:row-span-1 lg:col-span-1 w-full min-h-[200px] lg:min-h-0 overflow-hidden">
-          <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6 flex flex-col justify-center overflow-hidden">
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 w-full">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
+          <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-lg border-2 border-black bg-gray-100 dark:border-white dark:bg-gray-950">
+            <div className="relative min-h-56 w-full flex-1 sm:min-h-64 lg:min-h-72">
+              <Image
+                src={LAACImage}
+                alt="Joshua Rashtian speaking at an event"
+                fill
+                className="object-cover object-[center_20%]"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </article>
+          <article className="flex h-full flex-col justify-center rounded-lg border-2 border-black bg-gray-100 p-5 sm:p-8 dark:border-white dark:bg-gray-950">
             <h4 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 wrap-break-word">
               Joshua Rashtian
             </h4>
-            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 wrap-break-word">
+            <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 wrap-break-word">
               Computer Science Student at California Polytechnic State
               University, San Luis Obispo.
             </p>
-          </div>
+          </article>
         </div>
 
-        <div className="h-full w-full lg:col-span-3 lg:row-span-1 min-h-[150px] lg:min-h-0 overflow-hidden">
-          <div className="bg-gray-100 dark:border-white border-2 relative dark:bg-zinc-950 rounded-lg h-full p-4 sm:p-6 overflow-hidden">
-            <ol className="absolute hover:bg-gray-200 group w-[120px] hover:w-40 text-right dark:hover:bg-gray-800 transition-all duration-300 cursor-pointer top-3 flex flex-col gap-2 right-3 text-xs sm:text-sm font-mono  px-2 py-1 rounded z-10">
-              <li className="bg-gray-200 dark:bg-gray-800 group-hover:dark:bg-gray-600 px-2 py-1 rounded z-10">
+        <article className="overflow-hidden rounded-lg border-2 border-black bg-gray-100 dark:border-white dark:bg-zinc-950">
+          <div className="relative p-4 sm:p-6">
+            <ol className="absolute right-3 top-3 z-10 flex w-[120px] cursor-pointer flex-col gap-2 rounded px-2 py-1 text-right font-mono text-xs transition-all duration-300 hover:w-40 hover:bg-gray-200 group dark:hover:bg-gray-800 sm:text-sm">
+              <li className="rounded bg-gray-200 px-2 py-1 dark:bg-gray-800 group-hover:dark:bg-gray-600">
                 {selectedLanguage}
               </li>
               {["C++", "Java", "TypeScript"].map((language) => {
@@ -97,13 +110,13 @@ const About = () => {
                 return (
                   <li
                     key={language}
-                    className="flex flex-row gap-2 group-hover:opacity-100 opacity-0 items-center cursor-pointer group-hover:bg-gray-200 dark:group-hover:bg-gray-800 transition-all duration-300 px-2 py-1 rounded z-10"
+                    className="flex cursor-pointer flex-row items-center gap-2 rounded px-2 py-1 opacity-0 transition-all duration-300 group-hover:bg-gray-200 group-hover:opacity-100 dark:group-hover:bg-gray-800"
                     onClick={() => setSelectedLanguage(language)}
                   >
                     {Icon && (
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                      <Icon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
                     )}
-                    <span className="whitespace-nowrap truncate max-w-[120px] sm:max-w-none">
+                    <span className="max-w-[120px] truncate whitespace-nowrap sm:max-w-none">
                       {language}
                     </span>
                   </li>
@@ -111,7 +124,7 @@ const About = () => {
               })}
             </ol>
 
-            <div className="font-mono text-xs sm:text-sm lg:text-base mt-6 sm:mt-4 space-y-1 sm:space-y-2 overflow-x-auto max-w-full">
+            <div className="max-w-full space-y-1 overflow-x-auto pr-24 font-mono text-xs sm:space-y-2 sm:pr-28 sm:text-sm lg:text-base">
               {selectedLanguage === "C++" && (
                 <>
                   <pre className="overflow-x-auto whitespace-pre-wrap wrap-break-word">
@@ -189,21 +202,23 @@ const About = () => {
               )}
             </div>
           </div>
-        </div>
+        </article>
 
-        <div className="h-full w-full lg:col-span-4 lg:row-span-2 min-h-[400px] lg:min-h-0 overflow-hidden">
-          <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6  overflow-x-hidden">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-4 sm:mb-6">
+        <article className="overflow-hidden rounded-lg border-2 border-black bg-gray-100 dark:border-white dark:bg-gray-950">
+          <div className="p-3 sm:p-4">
+            <h2 className="mb-2 text-center text-lg font-bold sm:mb-3 sm:text-xl lg:text-2xl">
               Los Angeles, CA
-            </h1>
-            <Globe />
+            </h2>
+            <div className="flex w-full items-center justify-center py-1 sm:py-2">
+              <Globe />
+            </div>
           </div>
-        </div>
-        <div className="h-full w-full lg:col-span-4 lg:row-span-2 min-h-[400px] lg:min-h-0 overflow-hidden">
-          <div className="bg-gray-100 dark:bg-gray-950 border-2 dark:border-white rounded-lg h-full p-4 sm:p-6  overflow-x-hidden">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mb-4 sm:mb-6">
+        </article>
+        <article className="overflow-hidden rounded-lg border-2 border-black bg-gray-100 dark:border-white dark:bg-gray-950">
+          <div className="p-4 sm:p-6">
+            <h2 className="mb-4 text-center text-xl font-bold sm:mb-6 sm:text-2xl lg:text-3xl">
               Skillset
-            </h1>
+            </h2>
             <ol className="flex flex-col gap-3 sm:gap-4">
               <li className="text-base sm:text-lg font-bold">Languages</li>
               <ol className="flex flex-row flex-wrap gap-2 sm:gap-3 max-w-full">
@@ -266,7 +281,7 @@ const About = () => {
               </ol>
             </ol>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   );
