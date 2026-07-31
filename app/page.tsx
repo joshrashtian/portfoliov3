@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import ProjectMenu from "./(components)/homepage/projectMenu";
 import JoshuaTree from "./(components)/svgs/JoshuaTree";
+import Contact from "./(components)/homepage/contact";
 
 export default function Home() {
   const sectionRefMap = useRef<{ [key: string]: HTMLDivElement | null }>({
@@ -20,6 +21,7 @@ export default function Home() {
     about: null,
     experience: null,
     contact: null,
+    extras: null,
   });
 
   function assignRef(section: string, ref: HTMLDivElement | null) {
@@ -122,6 +124,11 @@ export default function Home() {
           ref={(el) => assignRef("contact", el as HTMLDivElement)}
         >
           <h1 className="text-6xl font-climate-crisis font-bold">Contact Me</h1>
+          <Contact />
+        </div>
+        <div className="h-screen w-full pt-20"
+          ref={(el) => assignRef("extras", el as HTMLDivElement)}>
+            <h1 className="text-6xl font-climate-crisis font-bold">Bonus Features</h1>
         </div>
       </main>
 
