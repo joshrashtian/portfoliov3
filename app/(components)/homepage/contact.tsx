@@ -68,7 +68,20 @@ export default function Contact() {
             className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
           />
         </div>
-
+        <div className="flex flex-col gap-1">
+          <label htmlFor="name" className="text-lg   font-bold">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
+            className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
+          />
+        </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="message" className="text-lg font-bold">
             Message
