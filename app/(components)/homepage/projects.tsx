@@ -132,13 +132,13 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
       </div>
       </button>
       <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
-        <Image
+        {/*<Image
           src={MESAConnectImage}
           alt="MESAConnect"
           width={500}
           height={100}
           className="absolute left-0  translate-y-32 xl:translate-y-16 rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
-        />
+        />*/}
         <div className="absolute right-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-end z-10">
           <p className="text-5xl font-semibold text-center">MESAConnect</p>
           <p className="text-lg text-gray-500 text-center">
@@ -283,7 +283,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
         </div>
       </button>
       <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-84  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
-        <Image
+        {/*<Image
           src={MESAMobileImage1}
           alt="MESAMobile1"
           width={300}
@@ -296,7 +296,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           width={300}
           height={100}
           className="absolute right-6 xl:right-0 translate-y-16 xl:translate-y-24 translate-x-6 xl:translate-x-0 rotate-6 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
-        />
+        />*/}
         <div className="absolute left-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-start z-10">
           <p className="text-5xl font-semibold text-center">MESAMobile</p>
           <p className="text-lg text-gray-500 text-center">
