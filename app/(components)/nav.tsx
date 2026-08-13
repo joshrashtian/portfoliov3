@@ -67,8 +67,8 @@ const Navigation = ({ navTo }: { navTo: (section: string) => void }) => {
         className="relative group text-zinc-600 transition-all duration-300 justify-center items-start flex flex-col  hover:bg-zinc-100 dark:hover:bg-zinc-900 border-zinc-200  w-full dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded px-4 sm:px-2"
         onClick={() => nav.push("/extra")}
       >
-        <IoMenuOutline />
-        <span className="text-sm">Extras</span>
+
+        <span className="text-sm">Bonus Features</span>
       </motion.button>
     </nav>
   );

@@ -6,7 +6,11 @@ import createGlobe from "cobe";
 /** CSS pixel size of the globe (buffer is 2× for `devicePixelRatio: 2`). */
 const GLOBE_PX = 300;
 
-export default function Globe() {
+export default function Globe({
+  coordinates = [34.05, -118.25],
+}: {
+  coordinates?: readonly [number, number];
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -28,7 +32,7 @@ export default function Globe() {
       glowColor: [1, 1, 1],
       markers: [
         // longitude latitude
-        { location: [34.05, -118.25], size: 0.1 },
+        { location: [coordinates[0], coordinates[1]], size: 0.1 },
       ],
       onRender: (state: Record<string, unknown>) => {
         // Called on every animation frame.
@@ -40,7 +44,7 @@ export default function Globe() {
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [coordinates]);
 
   return (
     <canvas

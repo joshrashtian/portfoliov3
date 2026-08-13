@@ -5,6 +5,8 @@ import { forwardRef } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import MESAConnectImage from "../../(assets)/images/projects/mesaconnectproject.png";
 import Image from "next/image";
+import CalendarPreview from "../../(assets)/images/projects/CalendarPreviewScreenshot.png";
+
 import {
   IoGitBranch,
   IoGlobe,
@@ -26,6 +28,111 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
       </h2>
       <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
         <Image
+          src={CalendarPreview}
+          alt="CalendarPreview"
+          width={500}
+          height={100}
+          className="absolute right-28 translate-y-32 rounded-md xl:translate-y-12  rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
+        />
+        <div className="absolute left-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-start z-10">
+          <p className="text-5xl font-semibold text-center">RiseByDay</p>
+          <p>IN-DEVELOPMENT</p>
+        <p className="text-lg text-gray-500 text-center">
+          A sleek, modern task creation app built for Students, by Students.
+          </p>
+          <div className="flex flex-row gap-3 items-center">
+            <IoLogoReact className="w-8 h-8 text-blue-500" />
+            {/* Framer Motion */}
+            <svg
+              height="32"
+              viewBox="3.7 3.7 43.6 43.6"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+            >
+              <path
+                d="m47.3 3.7v21.8l-10.9 10.9-10.9 10.9-10.9-10.9 10.9-10.9v.1-.1z"
+                fill="#59529d"
+              />
+              <path d="m47.3 25.5v21.8l-10.9-10.9z" fill="#5271b4" />
+              <path
+                d="m25.5 25.5-10.9 10.9-10.9 10.9v-43.6l10.9 10.9z"
+                fill="#bb4b96"
+              />
+            </svg>
+            {/* Supabase */}
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 109 113"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+            >
+              <path
+                d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                fill="url(#paint0_linear_supabase_risebyday)"
+              />
+              <path
+                d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
+                fill="url(#paint1_linear_supabase_risebyday)"
+                fillOpacity="0.2"
+              />
+              <path
+                d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
+                fill="#3ECF8E"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_supabase_risebyday"
+                  x1="53.9738"
+                  y1="54.974"
+                  x2="94.1635"
+                  y2="71.8295"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#249361" />
+                  <stop offset="1" stopColor="#3ECF8E" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_supabase_risebyday"
+                  x1="36.1558"
+                  y1="30.578"
+                  x2="54.4844"
+                  y2="65.0806"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop />
+                  <stop offset="1" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+            {/* Tauri */}
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+            >
+              <path
+                fill="#FFC131"
+                d="M13.912 0a8.72 8.72 0 0 0-8.308 6.139c1.05-.515 2.18-.845 3.342-.976 2.415-3.363 7.4-3.412 9.88-.097 2.48 3.315 1.025 8.084-2.883 9.45a6.131 6.131 0 0 1-.3 2.762 8.72 8.72 0 0 0 3.01-1.225A8.72 8.72 0 0 0 13.913 0zm.082 6.451a2.284 2.284 0 1 0-.15 4.566 2.284 2.284 0 0 0 .15-4.566zm-5.629.27a8.72 8.72 0 0 0-3.031 1.235 8.72 8.72 0 1 0 13.06 9.9131 10.173 10.174 0 0 1-3.343.965 6.125 6.125 0 1 1-7.028-9.343 6.114 6.115 0 0 1 .342-2.772zm1.713 6.27a2.284 2.284 0 0 0-2.284 2.283 2.284 2.284 0 0 0 2.284 2.284 2.284 2.284 0 0 0 2.284-2.284 2.284 2.284 0 0 0-2.284-2.284z"
+              />
+            </svg>
+          </div>
+          <Link
+            href="https://risebyday.com"
+            target="_blank"
+            className="bg-blue-400 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center font-mono"
+          >
+            <IoGlobe />
+            Visit Website
+          </Link>
+      </div>
+      </button>
+      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
+        <Image
           src={MESAConnectImage}
           alt="MESAConnect"
           width={500}
@@ -37,6 +144,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           <p className="text-lg text-gray-500 text-center">
             Social Media Platform for College of the Canyons MESA.
           </p>
+
           <div className="flex flex-row gap-3 items-center">
             <IoLogoReact className="w-8 h-8 text-blue-500" />
             {/* Next.js */}

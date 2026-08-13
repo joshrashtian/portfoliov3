@@ -37,7 +37,7 @@ export default function Contact() {
 
       <form
         onSubmit={handleSubmit}
-
+        className=" w-full"
       >
         <div className="flex flex-col  gap-1">
           <label htmlFor="email" className="text-lg font-bold">
@@ -50,7 +50,7 @@ export default function Contact() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
+            className="rounded-md border w-full border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
           />
         </div>
 
@@ -65,7 +65,7 @@ export default function Contact() {
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder="Let's work together"
-            className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
+            className="rounded-md border w-full border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -79,7 +79,7 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
-            className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
+            className="rounded-md border w-full border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -93,7 +93,7 @@ export default function Contact() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="What's on your mind?"
-            className="rounded-md border w-96 border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
+            className="rounded-md border w-full border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-orange-400 dark:border-gray-700 dark:bg-gray-900"
           />
         </div>
 
