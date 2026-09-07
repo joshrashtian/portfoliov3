@@ -1,0 +1,53 @@
+.notion-render {
+  color: rgb(39 39 42);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.notion-render h1,
+.notion-render h2,
+.notion-render h3 {
+  font-family: var(--font-climate-crisis-google, inherit);
+  color: inherit;
+}
+
+.notion-render a {
+  color: rgb(234 88 12);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.notion-render figure.notion-image img {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.notion-render div.notion-code pre code {
+  background-color: rgb(244 244 245);
+  border-radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notion-render {
+    color: rgb(228 228 231);
+  }
+
+  .notion-render div.notion-code pre code {
+    background-color: rgb(24 24 27);
+    color: rgb(228 228 231);
+  }
+
+  .notion-render a.notion-bookmark {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .notion-render a.notion-bookmark .bookmark-info .bookmark-title,
+  .notion-render a.notion-bookmark .bookmark-footer .bookmark-url {
+    color: rgb(228 228 231);
+  }
+
+  .notion-render a.notion-bookmark .bookmark-info .bookmark-description {
+    color: rgba(228, 228, 231, 0.65);
+  }
+}

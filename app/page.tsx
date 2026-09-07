@@ -220,7 +220,7 @@ export default function Home() {
         </div>
 
         <div
-          className="h-fit   "
+          className="h-screen "
           ref={(el) => assignRef("experience", el as HTMLDivElement)}
         >
           <ProjectMenu />

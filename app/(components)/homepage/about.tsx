@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Globe from "./globe";
 import LAACImage from "../../(assets)/images/LAAC.jpg";
 import Image from "next/image";
-
+import SLOMap from "../../(assets)/images/front_page/SLOMap.png";
 // ---------------------------------------------------------------------------
 // Data (single source of truth)
 // ---------------------------------------------------------------------------
@@ -181,7 +181,16 @@ function LocationCard() {
     <div className="p-5 sm:p-6 lg:p-8">
       <SectionLabel>Based in</SectionLabel>
       <div className="mt-4 flex flex-col items-center gap-4">
-        <Globe coordinates={HOME.coordinates} />
+        {/* <Globe coordinates={HOME.coordinates} /> */}
+        <div className="relative h-48 w-48 overflow-hidden rounded-full border border-zinc-200 shadow-inner sm:h-56 sm:w-56 dark:border-zinc-800">
+          <Image
+            src={SLOMap}
+            alt="Map centered on San Luis Obispo, California"
+            fill
+            sizes="224px"
+            className="origin-[50%_38%] scale-[1.4] object-cover grayscale contrast-125 dark:brightness-90 dark:invert"
+          />
+        </div>
         <p className="text-base font-bold sm:text-lg">{HOME.city}</p>
       </div>
     </div>

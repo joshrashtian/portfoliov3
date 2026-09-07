@@ -16,28 +16,40 @@ import {
 } from "react-icons/io5";
 import MESAMobileImage1 from "../../(assets)/images/projects/mesamobile1.png";
 import MESAMobileImage2 from "../../(assets)/images/projects/mesamobile2.png";
+import { Playwrite_US_Modern } from "next/font/google";
 
+const playwrite = Playwrite_US_Modern({ weight: "400" });
 export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
   return (
     <div
-      className=" flex-col flex p-5 items-center justify-center gap-5"
+      className=" flex-col flex p-5 bg-zinc-500/5 mt-4 rounded-t-4xl items-center justify-center gap-5"
       ref={ref}
     >
-      <h2 className="text-6xl font-black font-climate-crisis text-left w-full">
-        Projects
-      </h2>
-      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
-        <Image
-          src={CalendarPreview}
-          alt="CalendarPreview"
-          width={500}
-          height={100}
-          className="absolute right-28 translate-y-32 rounded-md xl:translate-y-12  rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
-        />
+
+      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 rounded-lg gap-2 items-center justify-center">
+        <div className="absolute right-4 xl:right-24 translate-y-28 xl:translate-y-10 w-[280px] sm:w-[340px] xl:w-[420px] rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500">
+          <div className="absolute -top-3 left-8 z-20 h-7 w-16 -rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
+          <div className="rounded-xl bg-white p-2.5 pb-6 shadow-2xl ring-1 ring-black/5">
+            <Image
+              src={CalendarPreview}
+              alt="CalendarPreview"
+              width={500}
+              height={100}
+              className="w-full h-auto rounded-md"
+            />
+            <p
+              className={`${playwrite.className} mt-3 text-center text-sm text-zinc-500`}
+            >
+              the calendar view :)
+            </p>
+          </div>
+        </div>
         <div className="absolute left-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-start z-10">
-          <p className="text-5xl font-semibold text-center">RiseByDay</p>
-          <p>IN-DEVELOPMENT</p>
-        <p className="text-lg text-gray-500 text-center">
+          <div className="flex flex-row w-full gap-4 items-center">
+            <p className="text-5xl font-black  text-center">RiseByDay</p>
+            <p className={`font-black  bg-red-900 -rotate-5  text-white p-1 px-3 ${playwrite.className}`}>Under Construction</p>
+          </div>
+        <p className="text-lg text-gray-500 font-light text-center">
           A sleek, modern task creation app built for Students, by Students.
           </p>
           <div className="flex flex-row gap-3 items-center">
