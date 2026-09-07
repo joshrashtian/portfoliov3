@@ -220,7 +220,7 @@ export default function Home() {
         </div>
 
         <div
-          className="h-screen "
+          className="min-h-screen pb-24 xl:pb-0"
           ref={(el) => assignRef("experience", el as HTMLDivElement)}
         >
           <ProjectMenu />

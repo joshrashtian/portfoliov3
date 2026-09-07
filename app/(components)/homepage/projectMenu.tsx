@@ -24,7 +24,7 @@ const ProjectMenu = () => {
 
   return (
     <div className="w-full origin-top pt-20 ">
-      <header className="flex flex-row font-climate-crisis w-3/4 mx-auto justify-center items-center lg:w-full gap-8 md:gap-16">
+      <header className="flex flex-row flex-wrap font-climate-crisis w-full px-4 mx-auto justify-center items-center gap-x-6 gap-y-2 sm:gap-8 md:gap-16">
         {[
           { key: "projects", label: "Projects" },
           { key: "workExperience", label: "Work Experience" },
@@ -36,7 +36,7 @@ const ProjectMenu = () => {
             onClick={() => handleTabChange(tab.key)}
           >
             <p
-              className={`text-2xl md:text-4xl uppercase tracking-wide transition-colors duration-300 ${
+              className={`text-lg sm:text-2xl md:text-4xl uppercase tracking-wide transition-colors duration-300 ${
                 activeTab === tab.key
                   ? "text-[#7a1620] dark:text-[#c23b4a]"
                   : "text-stone-400 dark:text-stone-600"

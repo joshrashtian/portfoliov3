@@ -26,8 +26,8 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
       ref={ref}
     >
 
-      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 rounded-lg gap-2 items-center justify-center">
-        <div className="absolute right-4 xl:right-24 translate-y-28 xl:translate-y-10 w-[280px] sm:w-[340px] xl:w-[420px] rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500">
+      <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg p-5 duration-500 xl:h-72 xl:flex-row xl:gap-2">
+        <div className="order-2 w-full max-w-[280px] rotate-2 duration-500 group-hover:rotate-6 group-hover:scale-[1.02] sm:max-w-[340px] xl:absolute xl:right-24 xl:order-none xl:w-[420px] xl:max-w-none xl:translate-y-10 xl:rotate-4">
           <div className="absolute -top-3 left-8 z-20 h-7 w-16 -rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
           <div className="rounded-xl bg-white p-2.5 pb-6 shadow-2xl ring-1 ring-black/5">
             <Image
@@ -44,15 +44,15 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
             </p>
           </div>
         </div>
-        <div className="absolute left-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-start z-10">
-          <div className="flex flex-row w-full gap-4 items-center">
-            <p className="text-5xl font-black  text-center">RiseByDay</p>
+        <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%]">
+          <div className="flex flex-row flex-wrap w-full gap-3 items-center">
+            <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left">RiseByDay</p>
             <p className={`font-black  bg-red-900 -rotate-5  text-white p-1 px-3 ${playwrite.className}`}>Under Construction</p>
           </div>
-        <p className="text-lg text-gray-500 font-light text-center">
+        <p className="text-base xl:text-lg text-gray-500 font-light text-left">
           A sleek, modern task creation app built for Students, by Students.
           </p>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row flex-wrap gap-3 items-center">
             <IoLogoReact className="w-8 h-8 text-blue-500" />
             {/* Framer Motion */}
             <svg
@@ -143,7 +143,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           </Link>
       </div>
       </button>
-      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-72  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
+      <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg bg-zinc-100 p-5 duration-500 dark:bg-zinc-900 xl:h-72 xl:flex-row xl:gap-2">
         {/*<Image
           src={MESAConnectImage}
           alt="MESAConnect"
@@ -151,13 +151,13 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           height={100}
           className="absolute left-0  translate-y-32 xl:translate-y-16 rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
         />*/}
-        <div className="absolute right-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-end z-10">
-          <p className="text-5xl font-semibold text-center">MESAConnect</p>
-          <p className="text-lg text-gray-500 text-center">
+        <div className="z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:right-10 xl:top-0 xl:h-full xl:w-auto xl:max-w-[45%] xl:items-end">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left xl:text-right">MESAConnect</p>
+          <p className="text-base xl:text-lg text-gray-500 text-left xl:text-right">
             Social Media Platform for College of the Canyons MESA.
           </p>
 
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row flex-wrap gap-3 items-center">
             <IoLogoReact className="w-8 h-8 text-blue-500" />
             {/* Next.js */}
             <svg
@@ -275,7 +275,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
             </svg>
             <IoLogoCss3 className="w-8 h-8 text-purple-500" />
           </div>
-          <ol className="flex flex-row gap-2 font-mono">
+          <ol className="flex flex-row flex-wrap gap-2 font-mono">
             <Link
               href="https://mesaconnect.io"
               target="_blank"
@@ -294,7 +294,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           </ol>
         </div>
       </button>
-      <button className="flex relative group overflow-hidden w-full xl:flex-row h-[480px] duration-500 xl:h-84  p-5 bg-zinc-100 dark:bg-zinc-900 rounded-lg gap-2 items-center justify-center">
+      <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg bg-zinc-100 p-5 duration-500 dark:bg-zinc-900 xl:h-84 xl:flex-row xl:gap-2">
         {/*<Image
           src={MESAMobileImage1}
           alt="MESAMobile1"
@@ -309,12 +309,12 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           height={100}
           className="absolute right-6 xl:right-0 translate-y-16 xl:translate-y-24 translate-x-6 xl:translate-x-0 rotate-6 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
         />*/}
-        <div className="absolute left-10 top-8 xl:top-0 xl:h-full flex-col flex gap-2 justify-center  items-start z-10">
-          <p className="text-5xl font-semibold text-center">MESAMobile</p>
-          <p className="text-lg text-gray-500 text-center">
+        <div className="z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:h-full xl:w-auto xl:max-w-[45%]">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left">MESAMobile</p>
+          <p className="text-base xl:text-lg text-gray-500 text-left">
             Access your MESA Experience on the go. Connect to your college.
           </p>
-          <div className="flex flex-row gap-3 items-center">
+          <div className="flex flex-row flex-wrap gap-3 items-center">
             {/* Expo */}
             <svg
               width="32"
@@ -392,7 +392,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
               />
             </svg>
           </div>
-          <ol className="flex flex-row gap-2 font-mono">
+          <ol className="flex flex-row flex-wrap gap-2 font-mono">
             <Link
               href="https://apps.apple.com/us/app/mesamobile/id6504261825"
               target="_blank"
