@@ -27,7 +27,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
     >
 
       <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg p-5 duration-500 xl:h-72 xl:flex-row xl:gap-2">
-        <div className="order-2 w-full max-w-[280px] rotate-2 duration-500 group-hover:rotate-6 group-hover:scale-[1.02] sm:max-w-[340px] xl:absolute xl:right-24 xl:order-none xl:w-[420px] xl:max-w-none xl:translate-y-10 xl:rotate-4">
+        <div className="order-2 w-[260px] rotate-2 duration-500 group-hover:rotate-6 group-hover:scale-[1.02] sm:w-[340px] xl:absolute xl:right-24 xl:order-none xl:w-[420px] xl:translate-y-10 xl:rotate-4">
           <div className="absolute -top-3 left-8 z-20 h-7 w-16 -rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
           <div className="rounded-xl bg-white p-2.5 pb-6 shadow-2xl ring-1 ring-black/5">
             <Image
