@@ -68,6 +68,13 @@ const editundo = localFont({
   display: "swap",
 });
 
+const satoshi = localFont({
+  src: "./(assets)/fonts/Satoshi-Variable.ttf",
+  variable: "--font-satoshi-local",
+  weight: "300 900",
+  display: "swap",
+});
+
 const climate_crisis = Climate_Crisis({
   variable: "--font-climate-crisis-google",
   subsets: ["latin"],
@@ -89,10 +96,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${neue.variable} ${mono.variable} ${climate_crisis.variable} ${editundo.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${neue.variable} ${mono.variable} ${climate_crisis.variable} ${editundo.variable} ${satoshi.variable}`}
+    >
+      <body className="antialiased">
         {children}
       </body>
     </html>

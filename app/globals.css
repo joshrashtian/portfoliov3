@@ -8,9 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-neue-local, Arial, Helvetica, sans-serif);
+  --font-sans: var(--font-satoshi-local, Arial, Helvetica, sans-serif);
   --font-brand: var(--font-neue-local, Arial, Helvetica, sans-serif);
   --font-header: var(--font-editundo, var(--font-neue-local, Arial, Helvetica, sans-serif));
+  --font-satoshi: var(--font-satoshi-local, Arial, Helvetica, sans-serif);
   --font-climate-crisis: var(--font-climate-crisis-google, "Impact", "Arial Black", sans-serif);
   --font-mono: var(--font-mono, ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace);
 }

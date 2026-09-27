@@ -16,6 +16,9 @@ import {
 } from "react-icons/io5";
 import MESAMobileImage1 from "../../(assets)/images/projects/mesamobile1.png";
 import MESAMobileImage2 from "../../(assets)/images/projects/mesamobile2.png";
+import MESAConnectPathway from "../../(assets)/images/projects/mesaconnect-pathway.webp";
+import MESAMobileProfile from "../../(assets)/images/projects/mesamobile-profile.webp";
+import MESAMobilePost from "../../(assets)/images/projects/mesamobile-post.webp";
 import { Playwrite_US_Modern } from "next/font/google";
 
 const playwrite = Playwrite_US_Modern({ weight: "400" });
@@ -25,7 +28,6 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
       className=" flex-col flex p-5 bg-zinc-500/5 mt-4 rounded-t-4xl items-center justify-center gap-5"
       ref={ref}
     >
-
       <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg p-5 duration-500 xl:h-72 xl:flex-row xl:gap-2">
         <div className="order-2 w-[260px] rotate-2 duration-500 group-hover:rotate-6 group-hover:scale-[1.02] sm:w-[340px] xl:absolute xl:right-24 xl:order-none xl:w-[420px] xl:translate-y-10 xl:rotate-4">
           <div className="absolute -top-3 left-8 z-20 h-7 w-16 -rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
@@ -46,11 +48,17 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
         </div>
         <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%]">
           <div className="flex flex-row flex-wrap w-full gap-3 items-center">
-            <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left">RiseByDay</p>
-            <p className={`font-black  bg-red-900 -rotate-5  text-white p-1 px-3 ${playwrite.className}`}>Under Construction</p>
+            <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left">
+              RiseByDay
+            </p>
+            <p
+              className={`font-black  bg-red-900 -rotate-5  text-white p-1 px-3 ${playwrite.className}`}
+            >
+              Under Construction
+            </p>
           </div>
-        <p className="text-base xl:text-lg text-gray-500 font-light text-left">
-          A sleek, modern task creation app built for Students, by Students.
+          <p className="text-base xl:text-lg text-gray-500 font-light text-left">
+            A sleek, modern task creation app built for Students, by Students.
           </p>
           <div className="flex flex-row flex-wrap gap-3 items-center">
             <IoLogoReact className="w-8 h-8 text-blue-500" />
@@ -132,6 +140,44 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
                 d="M13.912 0a8.72 8.72 0 0 0-8.308 6.139c1.05-.515 2.18-.845 3.342-.976 2.415-3.363 7.4-3.412 9.88-.097 2.48 3.315 1.025 8.084-2.883 9.45a6.131 6.131 0 0 1-.3 2.762 8.72 8.72 0 0 0 3.01-1.225A8.72 8.72 0 0 0 13.913 0zm.082 6.451a2.284 2.284 0 1 0-.15 4.566 2.284 2.284 0 0 0 .15-4.566zm-5.629.27a8.72 8.72 0 0 0-3.031 1.235 8.72 8.72 0 1 0 13.06 9.9131 10.173 10.174 0 0 1-3.343.965 6.125 6.125 0 1 1-7.028-9.343 6.114 6.115 0 0 1 .342-2.772zm1.713 6.27a2.284 2.284 0 0 0-2.284 2.283 2.284 2.284 0 0 0 2.284 2.284 2.284 2.284 0 0 0 2.284-2.284 2.284 2.284 0 0 0-2.284-2.284z"
               />
             </svg>
+            {/* Python */}
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 110 110"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+            >
+              <path
+                fill="#3776AB"
+                d="M54.9 0C26.8 0 28.6 12.2 28.6 12.2l.03 12.6h26.8v3.8H18S0 26.5 0 54.9c0 28.4 15.7 27.4 15.7 27.4h9.4V69.1s-.5-15.7 15.4-15.7h26.6s14.9.24 14.9-14.4V14.8S84.3 0 54.9 0zM40.1 8.5a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6z"
+              />
+              <path
+                fill="#FFD43B"
+                d="M55.7 110c28.1 0 26.3-12.2 26.3-12.2l-.03-12.6H55.2v-3.8h37.4s18 2 18-26.4c0-28.4-15.7-27.4-15.7-27.4h-9.4v13.2s.5 15.7-15.4 15.7H43.5s-14.9-.24-14.9 14.4v24.2S26.3 110 55.7 110zm14.8-8.5a4.8 4.8 0 1 1 0-9.6 4.8 4.8 0 0 1 0 9.6z"
+              />
+            </svg>
+            {/* FastAPI */}
+            <svg
+              width="32"
+              height="32"
+              viewBox="52.5 49.42 64.18 63.98"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+            >
+              <g transform="matrix(.96564 0 0 .96252 -846.83 244.291)">
+                <circle
+                  fill="#009688"
+                  cx="964.562"
+                  cy="-169.223"
+                  r="33.234"
+                />
+                <path
+                  fill="#fff"
+                  d="m962.269-187.408-6.645 14.803-3.036 6.764-6.644 14.804 30.591-21.568h-14.353l20.997-14.803z"
+                />
+              </g>
+            </svg>
           </div>
           <Link
             href="https://risebyday.com"
@@ -141,7 +187,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
             <IoGlobe />
             Visit Website
           </Link>
-      </div>
+        </div>
       </button>
       <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg bg-zinc-100 p-5 duration-500 dark:bg-zinc-900 xl:h-72 xl:flex-row xl:gap-2">
         {/*<Image
@@ -151,8 +197,27 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           height={100}
           className="absolute left-0  translate-y-32 xl:translate-y-16 rotate-4 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
         />*/}
-        <div className="z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:right-10 xl:top-0 xl:h-full xl:w-auto xl:max-w-[45%] xl:items-end">
-          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left xl:text-right">MESAConnect</p>
+        <div className="relative order-2 w-[280px] -rotate-2 duration-500 group-hover:-rotate-4 group-hover:scale-[1.02] sm:w-[380px] xl:absolute xl:left-16 xl:order-none xl:w-[460px] xl:translate-y-8 xl:-rotate-3">
+          <div className="absolute -top-3 right-10 z-20 h-7 w-16 rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
+          <div className="rounded-xl bg-white p-2.5 pb-6 shadow-2xl ring-1 ring-black/5">
+            <Image
+              src={MESAConnectPathway}
+              alt="MESAConnect transfer pathway"
+              width={500}
+              height={254}
+              className="w-full h-auto rounded-md"
+            />
+            <p
+              className={`${playwrite.className} mt-3 text-center text-sm text-zinc-500`}
+            >
+              transfer pathways
+            </p>
+          </div>
+        </div>
+        <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:right-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%] xl:items-end">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left xl:text-right">
+            MESAConnect
+          </p>
           <p className="text-base xl:text-lg text-gray-500 text-left xl:text-right">
             Social Media Platform for College of the Canyons MESA.
           </p>
@@ -309,8 +374,46 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           height={100}
           className="absolute right-6 xl:right-0 translate-y-16 xl:translate-y-24 translate-x-6 xl:translate-x-0 rotate-6 group-hover:rotate-6 group-hover:scale-[1.02] duration-500"
         />*/}
-        <div className="z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:h-full xl:w-auto xl:max-w-[45%]">
-          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left">MESAMobile</p>
+        <div className="order-2 flex flex-row items-start justify-center gap-4 duration-500 group-hover:scale-[1.02] xl:absolute xl:right-16 xl:top-8 xl:order-none">
+          <div className="relative w-[130px] -rotate-3 duration-500 group-hover:-rotate-6 sm:w-[160px] xl:w-[170px]">
+            <div className="absolute -top-3 left-1/2 z-20 h-6 w-14 -translate-x-1/2 rotate-3 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
+            <div className="rounded-xl bg-white p-2 pb-5 shadow-2xl ring-1 ring-black/5">
+              <Image
+                src={MESAMobileProfile}
+                alt="MESAMobile profile screen"
+                width={340}
+                height={740}
+                className="w-full h-auto rounded-md"
+              />
+              <p
+                className={`${playwrite.className} mt-2 text-center text-xs text-zinc-500`}
+              >
+                your profile
+              </p>
+            </div>
+          </div>
+          <div className="relative mt-8 w-[130px] rotate-3 duration-500 group-hover:rotate-6 sm:w-[160px] xl:w-[170px]">
+            <div className="absolute -top-3 left-1/2 z-20 h-6 w-14 -translate-x-1/2 -rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
+            <div className="rounded-xl bg-white p-2 pb-5 shadow-2xl ring-1 ring-black/5">
+              <Image
+                src={MESAMobilePost}
+                alt="MESAMobile admission post"
+                width={340}
+                height={740}
+                className="w-full h-auto rounded-md"
+              />
+              <p
+                className={`${playwrite.className} mt-2 text-center text-xs text-zinc-500`}
+              >
+                admission posts!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%]">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left">
+            MESAMobile
+          </p>
           <p className="text-base xl:text-lg text-gray-500 text-left">
             Access your MESA Experience on the go. Connect to your college.
           </p>
