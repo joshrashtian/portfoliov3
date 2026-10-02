@@ -306,12 +306,14 @@ export const GameShelf = ({ games }: { games: Game[] }) => {
             <span className="detail-title">{game.title}</span>
             <span className="detail-meta flex flex-row gap-4">
               {platformName(game)}
-              <span
-                className={`${game.rating >= 95 ? "text-yellow-600" : game.rating >= 90 ? "text-orange-500" : ""} flex flex-row gap-1 items-center`}
-              >
-                <IoStar />
-                {game?.rating}
-              </span>
+              {game.rating && (
+                <span
+                  className={`${game.rating >= 95 ? "text-yellow-600" : game.rating >= 90 ? "text-orange-500" : ""} flex flex-row gap-1 items-center`}
+                >
+                  <IoStar />
+                  {game?.rating}
+                </span>
+              )}
               {game.status}
             </span>
           </p>
