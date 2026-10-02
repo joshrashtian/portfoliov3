@@ -126,7 +126,8 @@ async function scan(platforms: Set<string>) {
   const alternates = new Map<number, string[]>();
   const images: LbImage[] = [];
 
-  let block: "Game" | "GameAlternateName" | "GameImage" | null = null;
+  type Block = "Game" | "GameAlternateName" | "GameImage";
+  let block: Block | null = null;
   let fields: Record<string, string> = {};
 
   const lines = readline.createInterface({
@@ -137,7 +138,7 @@ async function scan(platforms: Set<string>) {
   for await (const raw of lines) {
     const line = raw.trim();
     if (line === "<Game>" || line === "<GameAlternateName>" || line === "<GameImage>") {
-      block = line.slice(1, -1) as typeof block;
+      block = line.slice(1, -1) as Block;
       fields = {};
       continue;
     }
