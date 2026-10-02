@@ -33,7 +33,7 @@ export default async function BlogIndexPage() {
         </p>
 
         {posts.length === 0 ? (
-          <div className="mt-16 rounded-xl border-2 border-dashed border-black/20 p-10 text-center text-zinc-500 dark:border-white/20 dark:text-zinc-400">
+          <div className="mt-16 rounded-xl border-2 border-dashed p-10 text-center text-zinc-500 dark:border-white/20 dark:text-zinc-400">
             No published posts yet — check back soon.
           </div>
         ) : (
@@ -42,13 +42,13 @@ export default async function BlogIndexPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className="group flex flex-col-reverse gap-4 overflow-hidden rounded-xl border-2 border-black bg-stone-50 p-6 transition hover:-translate-y-0.5 hover:shadow-lg sm:flex-row sm:items-center sm:justify-between sm:p-8 dark:border-white dark:bg-zinc-950"
+                className="group flex flex-col-reverse gap-4 overflow-hidden border-b border-zinc-200   p-6 transition hover:-translate-y-0.5  sm:flex-row sm:items-center sm:justify-between sm:p-8 dark:border-white dark:bg-zinc-950"
               >
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     {post.type && (
-                      <span className="rounded-full bg-black px-3 py-1 text-xs font-semibold text-white dark:bg-white dark:text-black">
-                        {post.type}
+                      <span className="rounded-full -skew-2 bg-black px-3 py-1 text-xs font-semibold font-nippo text-white dark:bg-white dark:text-black">
+                        <p className="skew-2">{post.type}</p>
                       </span>
                     )}
                     {post.published && (
@@ -61,7 +61,9 @@ export default async function BlogIndexPage() {
                       </span>
                     )}
                   </div>
-                  <h2 className="mt-3 text-2xl font-bold sm:text-3xl">{post.title}</h2>
+                  <h2 className="mt-3 text-2xl font-nippo  sm:text-3xl">
+                    {post.title}
+                  </h2>
                   {post.summary && (
                     <p className="mt-2 max-w-xl text-sm text-zinc-600 dark:text-zinc-400">
                       {post.summary}
@@ -79,7 +81,7 @@ export default async function BlogIndexPage() {
                       ))}
                     </div>
                   )}
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 transition group-hover:gap-2.5">
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 transition">
                     Read post <IoArrowForward />
                   </span>
                 </div>

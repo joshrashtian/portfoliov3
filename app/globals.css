@@ -12,8 +12,10 @@
   --font-brand: var(--font-neue-local, Arial, Helvetica, sans-serif);
   --font-header: var(--font-editundo, var(--font-neue-local, Arial, Helvetica, sans-serif));
   --font-satoshi: var(--font-satoshi-local, Arial, Helvetica, sans-serif);
+  --font-clash-display: var(--font-clash-display-local, Arial, Helvetica, sans-serif);
+  --font-nippo: var(--font-nippo-local, Arial, Helvetica, sans-serif);
   --font-climate-crisis: var(--font-climate-crisis-google, "Impact", "Arial Black", sans-serif);
-  --font-mono: var(--font-mono, ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace);
+  --font-mono: var(--font-google-sans-code), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -32,7 +32,7 @@ const ProjectMenu = () => {
         ].map((tab) => (
           <button
             key={tab.key}
-            className="relative pb-2"
+            className="relative pb-2 outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 rounded-sm"
             onClick={() => handleTabChange(tab.key)}
           >
             <p

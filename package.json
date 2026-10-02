@@ -17,6 +17,7 @@
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
     "cobe": "^0.6.5",
+    "gray-matter": "^4.0.3",
     "motion": "^12.23.24",
     "next": "16.0.10",
     "notion": "^0.0.1",

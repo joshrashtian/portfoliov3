@@ -1,10 +1,11 @@
 "use client";
 
-import { Html, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 
+import { Html } from "./Html";
 import TVMenu, { type TVMenuItem } from "./TVMenu";
 
 export const TV_MODEL_URL = "/models/old_tv.glb";

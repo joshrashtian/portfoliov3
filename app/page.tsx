@@ -1,6 +1,6 @@
 "use client";
-import Navigation from "./(components)/nav";
-import { useRef, useState } from "react";
+import { NAV_EVENT } from "./(components)/nav";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import About from "./(components)/homepage/about";
 import {
@@ -57,13 +57,30 @@ export default function Home() {
     }
   };
 
+  // The nav lives in the layout: it signals here on "/", and links to
+  // "/#section" from every other page.
+  const navToRef = useRef(navTo);
+  navToRef.current = navTo;
 
+  useEffect(() => {
+    const onNav = (e: Event) =>
+      navToRef.current((e as CustomEvent<string>).detail);
+    window.addEventListener(NAV_EVENT, onNav);
+
+    const section = window.location.hash.slice(1);
+    if (section) {
+      navToRef.current(section);
+      history.replaceState(null, "", "/");
+    }
+
+    return () => window.removeEventListener(NAV_EVENT, onNav);
+  }, []);
 
   return (
     <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
       <main className="w-full max-w-7xl">
         <motion.div
-          className="relative flex min-h-screen rotate-1 h-full items-center px-6 py-24 sm:px-16 dark:bg-black"
+          className="relative flex min-h-screen  h-full items-center px-6 py-24 sm:px-16 dark:bg-black"
           ref={(el) => assignRef("home", el as HTMLDivElement)}
         >
           <div className="relative w-full" style={{ perspective: 2000 }}>
@@ -73,21 +90,11 @@ export default function Home() {
               animate={{ rotateY: isFlipped ? 180 : 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
-
               <div
                 className={isFlipped ? "pointer-events-none" : ""}
                 style={{ backfaceVisibility: "hidden" }}
               >
-                <Tilt
-                  tiltEnable={tiltEnabled && !isFlipped}
-                  tiltMaxAngleX={2}
-                  tiltMaxAngleY={2}
-                  perspective={500}
-                  glareEnable={true}
-                  glareMaxOpacity={0.45}
-                  scale={1.02}
-                  className="relative w-full overflow-hidden rounded-xl border-2 border-black bg-stone-50 p-6 sm:p-10 lg:p-14 dark:border-white dark:bg-zinc-950"
-                >
+                <div className="relative w-full overflow-hidden rounded-xl border-2 border-black bg-stone-50 p-6 sm:p-10 lg:p-14 dark:border-white dark:bg-zinc-950">
                   <JoshuaTree
                     aria-hidden
                     className="pointer-events-none absolute right-0 top-0 h-full w-auto max-w-[50%] text-black/5 dark:text-white/5"
@@ -135,14 +142,16 @@ export default function Home() {
                       Joshua
                     </span>
                     <br />
-                    Rashtian<span className="rotate-6 absolute text-orange-600">!</span>
+                    Rashtian
+                    <span className="rotate-6 absolute text-orange-600">!</span>
                   </h1>
 
                   <div className="relative z-10 mt-10 flex flex-col gap-8 sm:mt-14 sm:flex-row sm:items-end sm:justify-between">
                     <div className="max-w-lg">
                       <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-                        Full Stack Engineer + Computer Science Student, 3 years of
-                        experience. Based between Los Angeles and San Luis Obispo.
+                        Full Stack Engineer + Computer Science Student, 3 years
+                        of experience. Based between Los Angeles and San Luis
+                        Obispo.
                       </p>
                       <div className="mt-4 flex flex-row gap-4 text-2xl">
                         <Link
@@ -176,15 +185,17 @@ export default function Home() {
                       View Resume <IoArrowForward />
                     </Link>
                   </div>
-                </Tilt>
+                </div>
               </div>
-
 
               <div
                 className={`absolute inset-0 h-full ${
                   isFlipped ? "" : "pointer-events-none"
                 }`}
-                style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                }}
               >
                 <Contact />
               </div>
@@ -194,7 +205,9 @@ export default function Home() {
               type="button"
               onClick={() => setIsFlipped((prev) => !prev)}
               aria-pressed={isFlipped}
-              aria-label={isFlipped ? "Flip to front of postcard" : "Flip to contact form"}
+              aria-label={
+                isFlipped ? "Flip to front of postcard" : "Flip to contact form"
+              }
               className="absolute -top-4 right-4 z-30 -rotate-2 flex items-center gap-1.5 rounded-full border border-black/10 bg-orange-400 text-black px-3 py-1.5 text-xs font-medium backdrop-blur transition hover:scale-105 hover:bg-orange-300 dark:border-white/10"
             >
               {isFlipped ? "Back to Front" : "Flip to Contact"}
@@ -205,10 +218,14 @@ export default function Home() {
             type="button"
             onClick={() => setTiltEnabled((prev) => !prev)}
             aria-pressed={tiltEnabled}
-            aria-label={tiltEnabled ? "Disable tilt effect" : "Enable tilt effect"}
+            aria-label={
+              tiltEnabled ? "Disable tilt effect" : "Enable tilt effect"
+            }
             className="absolute bottom-12 right-0 z-20 -rotate-3 flex items-center gap-1.5 rounded-full border border-black/10 bg-blue-500 text-white px-3 py-1.5 text-xs font-medium  backdrop-blur transition hover:bg-blue-400 dark:border-white/10 dark:bg-black/40 dark:text-zinc-300 dark:hover:bg-black/60"
           >
-            <IoCubeOutline className={`${tiltEnabled ? "" : "opacity-40"} duration-500`} />
+            <IoCubeOutline
+              className={`${tiltEnabled ? "" : "opacity-40"} duration-500`}
+            />
             {tiltEnabled ? "Tilt: On" : "Tilt: Off"}
           </button>
         </motion.div>
@@ -226,8 +243,6 @@ export default function Home() {
           <ProjectMenu />
         </div>
       </main>
-
-      <Navigation navTo={navTo} />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { Canvas, type CanvasProps } from "@react-three/fiber";
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
+import { Html } from "./Html";
 import { Suspense, type ReactNode } from "react";
 
 type SceneProps = {

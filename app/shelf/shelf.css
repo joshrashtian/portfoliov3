@@ -1,0 +1,657 @@
+/*
+  Game-case shelf, ported from the book shelf. Each case is its platform's
+  real retail box: sized in millimetres (--w/--hh/--d below, against one
+  --mm for the whole shelf, so a 3DS case really is shorter than a Wii one),
+  in that platform's plastic, with its logo band across the top.
+
+  Geometry: `.case-inner` IS the front cover plane (width --cw, z = 0), and the
+  other three faces hang off it, so the open state is a plain rotateY.
+
+    .face-spine  right:100%, origin right, rotateY(-90deg)  → z ∈ [−T,0]
+    .face-fore   left:100%,  origin left,  rotateY(90deg)   → z ∈ [−T,0]
+    .face-back   translateZ(−T)
+*/
+
+@property --open {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* On the page root, so the standing shelf and the lying stack share one scale. */
+.shelf {
+  --shelf-h: 420px;
+  /* The tallest box (a 190mm DVD case) takes 86% of the shelf. */
+  --mm: calc(var(--shelf-h) * 0.86 / 190);
+
+  /* Peaks at ~1.04: opening, that's ~17deg, still short of flat. */
+  --ease-spring: linear(
+    0, 0.25 8%, 0.6 16%, 0.88 25%, 1.03 35%, 1.042 42%, 1.02 55%, 0.998 72%, 1
+  );
+
+  --ink: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 55%, transparent);
+
+  /* The detail line's reserved band under each row. The playing stack is
+     lifted by the same amount so it rests on the cases' baseline, not on
+     the bottom of the empty detail space. */
+  --details-h: 4.5rem;
+}
+
+/* ── One year ────────────────────────────────────────────────────── */
+.shelf-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px dotted var(--muted);
+}
+
+.shelf-year {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--ink);
+}
+
+.shelf-stats {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* The standing row, with the lying stack (newest year only) at its far end. */
+.shelf-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.5rem 3rem;
+}
+
+.shelf-row {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.game-shelf {
+  display: flex;
+  align-items: flex-end;
+  min-height: var(--shelf-h);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-x: auto;
+  overflow-y: visible;
+  /* Room for the open case's far edge, which swings out past the slot. */
+  padding-inline-end: 40px;
+}
+
+/*
+  The open case's line under the row. One per case, all hidden; GameShelf
+  emits an nth-child rule per slot that shows the one whose <details> is
+  open, so it stays zero-JS. Reserved height, so opening doesn't shift the
+  page.
+*/
+.shelf-details {
+  box-sizing: border-box;
+  height: var(--details-h);
+  padding-top: 1rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.shelf-detail {
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detail-title {
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.detail-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/*
+  ── The boxes ───────────────────────────────────────────────────────
+  --w × --hh × --d in mm. --case is the moulded plastic (rim, opening edge),
+  --band the logo strip printed across the top of the insert. Shared by
+  the standing cases and the lying stack via [data-case].
+*/
+.game-case,
+.lying-case {
+  --w: 135;
+  --hh: 171;
+  --d: 13;
+  --band-h: 16;
+  --case: #1d1d1f;
+  --band: #111;
+  --band-text: #fff;
+}
+
+/* Blu-ray family. */
+[data-case="ps5"] {
+  --case: #2a5db0;
+  --band: #fff;
+  --band-text: #111;
+}
+
+[data-case="ps4"] {
+  --case: #1b3f8f;
+  --band: #0a3a96;
+}
+
+/* Later PS3 inserts: black band, tinted-blue Blu-ray plastic, a hair thicker. */
+[data-case="ps3"] {
+  --d: 14;
+  --case: #3d5f9e;
+  --band: #000;
+}
+
+[data-case="xbox-one"] {
+  --case: #0e7a0d;
+  --band: #107c10;
+}
+
+[data-case="wii-u"] {
+  --hh: 170;
+  --d: 11;
+  --case: #1d8fc4;
+  --band: #009ac7;
+}
+
+/* DVD family: taller. */
+[data-case="xbox-360"] {
+  --hh: 190;
+  --d: 14;
+  --band-h: 18;
+  --case: #3a9a2a;
+  --band: #fff;
+  --band-text: #3a9a2a;
+}
+
+[data-case="wii"] {
+  --hh: 190;
+  --d: 14;
+  --band-h: 18;
+  --case: #f1f1f1;
+  --band: #fff;
+  --band-text: #8a8f96;
+}
+
+[data-case="pc"] {
+  --hh: 190;
+  --d: 14;
+  --band-h: 18;
+  --case: #18181a;
+  --band: #000;
+}
+
+/* Narrow cartridge cases. */
+[data-case="switch"],
+[data-case="switch-2"] {
+  --w: 105;
+  --hh: 170;
+  --d: 11;
+  --band-h: 15;
+  --case: #e60012;
+  --band: #e60012;
+}
+
+[data-case="3ds"] {
+  --w: 125;
+  --hh: 137;
+  --d: 13;
+  --band-h: 14;
+  --case: #ececec;
+  --band: #fff;
+  --band-text: #b5121b;
+}
+
+.game-case {
+  --h: calc(var(--mm) * var(--hh));
+  --cw: calc(var(--mm) * var(--w));
+  --t: calc(var(--mm) * var(--d));
+  --rim: calc(var(--mm) * 1.5);
+
+  --gap: calc(var(--shelf-h) * 0.06);
+  /* Short of flat, so the spine stays in view beside the cover. */
+  --open-angle: 20deg;
+  --shade: 0.65;
+
+  /* What the case projects to when open; the slot has to be this wide. */
+  --open-w: calc(
+    (var(--cw) * cos(var(--open-angle)) + var(--t) * sin(var(--open-angle))) *
+      0.931
+  );
+
+  --open: 0;
+  /* The spring overshoots both ways. Below 0 the case would turn past
+     edge-on and show the back of its spine, so the closing side is clamped. */
+  --o: max(var(--open), 0);
+
+  position: relative;
+  flex: 0 0 auto;
+  height: var(--h);
+  z-index: 1;
+  width: calc(var(--t) + (var(--open-w) - var(--t)) * var(--o));
+  margin-inline: calc(var(--gap) * var(--o));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .game-case {
+    transition:
+      --open 600ms var(--ease-spring),
+      z-index 0s linear 600ms;
+  }
+
+  .game-case:has(details[open]) {
+    transition:
+      --open 600ms var(--ease-spring),
+      z-index 0s linear 0s;
+  }
+}
+
+.game-case:first-child {
+  margin-inline-start: 0;
+}
+
+.game-case:last-child {
+  margin-inline-end: 0;
+}
+
+.game-case:has(details[open]) {
+  --open: 1;
+  z-index: 3;
+}
+
+.game-case details,
+.game-case summary {
+  position: absolute;
+  inset: 0;
+}
+
+.game-case summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  /* On the summary: perspective only reaches direct children. */
+  perspective: 900px;
+}
+
+.game-case summary::-webkit-details-marker {
+  display: none;
+}
+
+.game-case summary:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+/* --cw wide even when closed, overflowing the --t slot edge-on. Nothing on
+   the case may set overflow: hidden. */
+.case-inner {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--cw);
+  transform-style: preserve-3d;
+  transform-origin: left center calc(var(--t) * -1);
+  transform: translateZ(calc(var(--t) * (1 - var(--o))))
+    rotateY(calc(90deg - (90deg - var(--open-angle)) * var(--o)));
+}
+
+.face-cover,
+.face-back {
+  position: absolute;
+  inset: 0;
+}
+
+.face-back {
+  transform: translateZ(calc(var(--t) * -1));
+  background: var(--art);
+  border: var(--rim) solid var(--case);
+  border-radius: calc(var(--mm) * 3);
+}
+
+/* The insert behind the plastic, framed by the case's moulded rim. */
+.face-cover {
+  display: flex;
+  flex-direction: column;
+  border: var(--rim) solid var(--case);
+  border-radius: calc(var(--mm) * 3);
+  overflow: hidden;
+  background: var(--art);
+}
+
+.cover-band {
+  flex: 0 0 calc(var(--mm) * var(--band-h));
+  display: flex;
+  align-items: center;
+  padding-inline: calc(var(--mm) * 6);
+  background: var(--band);
+  color: var(--band-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--mm) * 7);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  gap: calc(var(--mm) * 3);
+}
+
+/* Boxes sized by width; `slice` in GameCase.tsx crops the empty square. */
+.cover-band svg {
+  flex: none;
+  height: calc(var(--mm) * var(--band-h));
+}
+
+.cover-band[data-logo="wordmark"] svg {
+  width: calc(var(--mm) * 30);
+}
+
+/* The PS shapes ahead of the PS4/PS5 wordmark, as on the real band. After
+   the wordmark rule so its square size wins. */
+.cover-band svg.band-mark {
+  width: calc(var(--mm) * 10);
+  height: calc(var(--mm) * 10);
+}
+
+/* Square, so the box has to be square too or `slice` crops the icon. */
+.cover-band[data-logo="icon"] svg {
+  width: calc(var(--mm) * 9);
+  height: calc(var(--mm) * 9);
+}
+
+.cover-art {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 1rem 0.85rem;
+  min-height: 0;
+  color: var(--art-text, #f5f3ee);
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.cover-art:has(.cover-img) {
+  padding: 0;
+}
+
+/* Box scans are close to their case's ratio already (Switch 0.62, PS 0.80),
+   so `cover` only trims a sliver. */
+.cover-img {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.cover-title {
+  font-size: 0.8125rem;
+  line-height: 1.25;
+}
+
+.cover-series {
+  font-size: 0.6875rem;
+  opacity: 0.7;
+}
+
+/* ── Light, on the turned-out case only ── */
+.face-cover::before,
+.face-cover::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  opacity: calc(var(--open) * var(--shade));
+}
+
+/* The hinge ridge moulded along the spine edge. */
+.face-cover::before {
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 7px;
+  background: linear-gradient(
+    to right,
+    rgb(255 255 255 / 0.35) 0 1px,
+    rgb(0 0 0 / 0.25) 1px 3px,
+    rgb(0 0 0 / 0.08) 3px 7px
+  );
+}
+
+/* Clear plastic sleeve: a sharper sheen than a book board. */
+.face-cover::after {
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgb(255 255 255 / 0.22),
+    rgb(255 255 255 / 0) 30%,
+    rgb(255 255 255 / 0) 70%,
+    rgb(255 255 255 / 0.12)
+  );
+}
+
+/* The insert wraps the spine too, band and all, under the same plastic. */
+.face-spine {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: var(--t);
+  height: 100%;
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+  background: var(--art);
+  border-block: var(--rim) solid var(--case);
+  color: var(--art-text, #f5f3ee);
+  /* Band (and repeat mark) at the head, title at the foot, whatever length
+     each label is. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.face-spine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgb(0 0 0 / 0.22), rgb(0 0 0 / 0.1));
+  opacity: calc(var(--open) * var(--shade));
+}
+
+.spine-band {
+  flex: none;
+  align-self: stretch;
+  min-height: calc(var(--mm) * 32);
+  padding-block: calc(var(--mm) * 4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--band);
+  color: var(--band-text);
+  writing-mode: vertical-rl;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(7px, calc(var(--t) * 0.5), 12px);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Reads bottom-to-top like the title. */
+.spine-band-text {
+  transform: rotate(180deg);
+}
+
+/*
+  Wordmarks lie along the spine, turned the same way as the text: the svg is
+  laid out landscape (26mm × the spine's width) and rotated about its centre.
+  The Switch icon stands upright instead, as on the real spine.
+*/
+.spine-logo {
+  position: relative;
+  width: var(--t);
+  height: calc(var(--mm) * 26);
+}
+
+.spine-logo svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.spine-logo[data-orient="along"] svg {
+  width: calc(var(--mm) * 26);
+  height: var(--t);
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.spine-logo[data-orient="upright"] {
+  height: var(--t);
+}
+
+.spine-logo[data-orient="upright"] svg {
+  width: calc(var(--t) * 0.7);
+  height: calc(var(--t) * 0.7);
+  transform: translate(-50%, -50%);
+}
+
+/* The opening edge: bare moulded plastic, no insert. */
+.face-fore {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: var(--t);
+  height: 100%;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  background: linear-gradient(
+    to right,
+    var(--case),
+    color-mix(in srgb, var(--case) 80%, black)
+  );
+}
+
+/* A replayed game: sits under the band, so it reads with the case closed. */
+.spine-repeat {
+  flex: none;
+  display: flex;
+}
+
+.spine-repeat svg {
+  width: clamp(8px, calc(var(--t) * 0.7), 15px);
+  height: auto;
+}
+
+.spine-title {
+  margin-top: auto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  overflow: hidden;
+  /* Shrinks into whatever the band leaves, then ellipsises. */
+  min-height: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(8px, calc(var(--t) * 0.6), 15px);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+/*
+  ── Currently playing ───────────────────────────────────────────────
+  Cases lying flat, spine out: the spine turned on its side, so length is the
+  box's height (--hh) and thickness its depth (--d), at the shelf's --mm.
+  Band at the left end, title reading left-to-right, rimmed in the plastic.
+*/
+.playing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: var(--details-h);
+}
+
+.playing-label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.playing-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lying-case {
+  --t: calc(var(--mm) * var(--d));
+  --rim: calc(var(--mm) * 1.5);
+
+  display: flex;
+  align-items: stretch;
+  width: calc(var(--mm) * var(--hh));
+  height: var(--t);
+  background: var(--art);
+  border-inline: var(--rim) solid var(--case);
+  color: var(--art-text, #f5f3ee);
+  /* Thin light on the top edge, shadow under: it's resting on the next one. */
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    0 1px 0 rgb(0 0 0 / 0.25);
+}
+
+.lying-band {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--mm) * 32);
+  padding-inline: calc(var(--mm) * 4);
+  background: var(--band);
+  color: var(--band-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(7px, calc(var(--t) * 0.5), 12px);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Same `slice` trick as the cover band, just horizontal. */
+.lying-band svg {
+  flex: none;
+}
+
+.lying-band[data-logo="wordmark"] svg {
+  width: calc(var(--mm) * 26);
+  height: var(--t);
+}
+
+.lying-band[data-logo="icon"] svg {
+  width: calc(var(--t) * 0.7);
+  height: calc(var(--t) * 0.7);
+}
+
+.lying-title {
+  flex: 1;
+  min-width: 0;
+  /* Block, not flex: ellipsis only applies to a block's own inline text. */
+  line-height: var(--t);
+  padding-inline: calc(var(--mm) * 5);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(8px, calc(var(--t) * 0.6), 15px);
+}

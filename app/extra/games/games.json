@@ -1,0 +1,1311 @@
+[
+  {
+    "slug": "spider-man-2",
+    "title": "Spider-Man 2",
+    "platforms": [
+      "PS5"
+    ],
+    "series": [
+      "Spider-Man"
+    ],
+    "status": "Backlog",
+    "isPlaying": true,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative",
+      "Action"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2023,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "grand-theft-auto-v",
+    "title": "Grand Theft Auto V",
+    "platforms": [
+      "PC",
+      "PS4",
+      "PS5",
+      "Xbox One"
+    ],
+    "series": [
+      "Grand Theft Auto"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative",
+      "Third Person Shooter"
+    ],
+    "rating": 100,
+    "completed": "2017-11-27",
+    "played": null,
+    "releaseYear": 2013,
+    "case": "Xbox One",
+    "launchboxId": null
+  },
+  {
+    "slug": "minecraft",
+    "title": "Minecraft",
+    "platforms": [
+      "PC",
+      "Nintendo Switch",
+      "PS4",
+      "PS5",
+      "Xbox 360",
+      "Xbox One",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World"
+    ],
+    "rating": 100,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2011,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "red-dead-redemption-2",
+    "title": "Red Dead Redemption 2",
+    "platforms": [
+      "PC",
+      "Xbox One"
+    ],
+    "series": [
+      "Red Dead Redemption"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative"
+    ],
+    "rating": 100,
+    "completed": "2022-11-12",
+    "played": null,
+    "releaseYear": 2018,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "terraria",
+    "title": "Terraria",
+    "platforms": [
+      "PC",
+      "PS5",
+      "PS4",
+      "Xbox One",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG",
+      "Sandbox"
+    ],
+    "rating": 100,
+    "completed": "2016-05-14",
+    "played": null,
+    "releaseYear": 2011,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "the-last-of-us",
+    "title": "The Last of Us",
+    "platforms": [
+      "PS3"
+    ],
+    "series": [
+      "The Last of Us"
+    ],
+    "status": "Completed",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Narrative",
+      "Third Person Shooter"
+    ],
+    "rating": 100,
+    "completed": "2023-05-04",
+    "played": null,
+    "releaseYear": 2013,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "persona-5-royal",
+    "title": "Persona 5 Royal",
+    "platforms": [
+      "PC",
+      "Steam Deck",
+      "PS5",
+      "PS4"
+    ],
+    "series": [],
+    "status": "Completed",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": 97,
+    "completed": "2026-02-17",
+    "played": "2026-02-02",
+    "releaseYear": 2017,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-galaxy",
+    "title": "Super Mario Galaxy",
+    "platforms": [
+      "Nintendo Switch",
+      "Wii"
+    ],
+    "series": [
+      "Super Mario"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 97,
+    "completed": "2012-01-01",
+    "played": null,
+    "releaseYear": 2007,
+    "case": "Wii",
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-galaxy-2",
+    "title": "Super Mario Galaxy 2",
+    "platforms": [
+      "Nintendo Switch",
+      "Wii"
+    ],
+    "series": [
+      "Super Mario"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 97,
+    "completed": "2013-08-20",
+    "played": null,
+    "releaseYear": 2010,
+    "case": "Wii",
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-maker",
+    "title": "Super Mario Maker",
+    "platforms": [
+      "Wii U"
+    ],
+    "series": [
+      "Super Mario"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 95,
+    "completed": "2015-09-11",
+    "played": null,
+    "releaseYear": 2015,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-smash-bros-ultimate",
+    "title": "Super Smash Bros Ultimate",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "series": [
+      "Smash Bros"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer",
+      "Fighting"
+    ],
+    "rating": 95,
+    "completed": "2019-06-15",
+    "played": null,
+    "releaseYear": 2018,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "expedition-33",
+    "title": "Expedition 33",
+    "platforms": [
+      "PS5",
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": 94,
+    "completed": "2025-12-23",
+    "played": "2025-05-09",
+    "releaseYear": 2025,
+    "case": "PS5",
+    "launchboxId": null
+  },
+  {
+    "slug": "the-last-of-us-part-ii",
+    "title": "The Last of Us Part II",
+    "platforms": [
+      "PS4"
+    ],
+    "series": [
+      "The Last of Us"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Narrative",
+      "Third Person Shooter"
+    ],
+    "rating": 94,
+    "completed": "2023-06-13",
+    "played": "2023-06-13",
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "animal-crossing-new-leaf",
+    "title": "Animal Crossing New Leaf",
+    "platforms": [
+      "Nintendo 3DS"
+    ],
+    "series": [
+      "Animal Crossing"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Cozy"
+    ],
+    "rating": 93,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2013,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "persona-3-reload",
+    "title": "Persona 3 Reload",
+    "platforms": [
+      "PS5",
+      "PC"
+    ],
+    "series": [
+      "Persona"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": 93,
+    "completed": "2026-03-07",
+    "played": "2026-02-20",
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "persona-4-golden",
+    "title": "Persona 4 Golden",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": 93,
+    "completed": "2026-06-25",
+    "played": null,
+    "releaseYear": 2012,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-smash-bros-brawl",
+    "title": "Super Smash Bros. Brawl",
+    "platforms": [
+      "Wii"
+    ],
+    "series": [
+      "Super Smash Bros"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Fighting"
+    ],
+    "rating": 93,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2008,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "titanfall-2",
+    "title": "Titanfall 2",
+    "platforms": [
+      "Xbox One",
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "First Person Shooter"
+    ],
+    "rating": 92,
+    "completed": "2020-12-31",
+    "played": null,
+    "releaseYear": 2016,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "balatro",
+    "title": "Balatro",
+    "platforms": [
+      "PC",
+      "PS5"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Rogue-Like"
+    ],
+    "rating": 90,
+    "completed": "2025-01-12",
+    "played": null,
+    "releaseYear": 2024,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "civilization-vi",
+    "title": "Civilization VI",
+    "platforms": [
+      "Nintendo Switch",
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [
+      "Civilization"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Turn-Based",
+      "Strategy"
+    ],
+    "rating": 90,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2016,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "cyberpunk-2077",
+    "title": "Cyberpunk 2077",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "RPG",
+      "First Person Shooter"
+    ],
+    "rating": 90,
+    "completed": "2024-12-28",
+    "played": "2024-12-28",
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "mario-kart-wii",
+    "title": "Mario Kart Wii",
+    "platforms": [
+      "Wii"
+    ],
+    "series": [
+      "Mario Kart",
+      "Super Mario"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Racing"
+    ],
+    "rating": 90,
+    "completed": "2012-08-02",
+    "played": null,
+    "releaseYear": 2008,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "satisfactory",
+    "title": "Satisfactory",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Cozy"
+    ],
+    "rating": 90,
+    "completed": "2024-10-03",
+    "played": null,
+    "releaseYear": 2024,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "stardew-valley",
+    "title": "Stardew Valley",
+    "platforms": [
+      "PC",
+      "Xbox One",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Sandbox",
+      "Cozy"
+    ],
+    "rating": 90,
+    "completed": "2026-02-01",
+    "played": "2026-01-15",
+    "releaseYear": 2016,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-odyseey",
+    "title": "Super Mario Odyseey",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "series": [
+      "Super Mario"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 90,
+    "completed": "2019-06-16",
+    "played": null,
+    "releaseYear": 2017,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "arc-raiders",
+    "title": "ARC Raiders",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Third Person Shooter"
+    ],
+    "rating": 85,
+    "completed": "2025-12-12",
+    "played": null,
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "hades",
+    "title": "Hades",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Almost Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Rogue-Like"
+    ],
+    "rating": 85,
+    "completed": "2026-04-24",
+    "played": null,
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-smash-bros-4",
+    "title": "Super Smash Bros 4",
+    "platforms": [
+      "Wii U",
+      "Nintendo 3DS"
+    ],
+    "series": [
+      "Super Smash Bros"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Fighting"
+    ],
+    "rating": 85,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2014,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "celeste",
+    "title": "Celeste",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 83,
+    "completed": "2020-11-21",
+    "played": null,
+    "releaseYear": 2018,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "far-cry-3",
+    "title": "Far Cry 3",
+    "platforms": [
+      "PC"
+    ],
+    "series": [
+      "Far Cry"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "First Person Shooter",
+      "Action"
+    ],
+    "rating": 80,
+    "completed": "2020-10-11",
+    "played": null,
+    "releaseYear": 2012,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "forza-horizon-6",
+    "title": "Forza Horizon 6",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Racing"
+    ],
+    "rating": 80,
+    "completed": "2026-05-22",
+    "played": null,
+    "releaseYear": 2026,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "horizon-forbidden-west",
+    "title": "Horizon Forbidden West",
+    "platforms": [
+      "PS5",
+      "PC"
+    ],
+    "series": [
+      "Horizon"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative"
+    ],
+    "rating": 80,
+    "completed": "2024-04-08",
+    "played": null,
+    "releaseYear": 2022,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "horizon-zero-down",
+    "title": "Horizon Zero Down",
+    "platforms": [
+      "PC",
+      "PS4",
+      "PS5"
+    ],
+    "series": [
+      "Horizon"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Narrative",
+      "Open-World"
+    ],
+    "rating": 80,
+    "completed": "2017-07-20",
+    "played": null,
+    "releaseYear": 2017,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "risk-of-rain-2",
+    "title": "Risk of Rain 2",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Third Person Shooter"
+    ],
+    "rating": 80,
+    "completed": "2023-07-30",
+    "played": null,
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-3d-world-bowsers-fury",
+    "title": "Super Mario 3D World + Bowser's Fury",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": true,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 80,
+    "completed": "2026-01-12",
+    "played": "2026-01-03",
+    "releaseYear": 2013,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "the-alters",
+    "title": "The Alters",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Almost Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": 80,
+    "completed": null,
+    "played": "2025-07-18",
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "palworld",
+    "title": "Palworld",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World"
+    ],
+    "rating": 79,
+    "completed": "2024-02-21",
+    "played": null,
+    "releaseYear": 2022,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "spider-man-miles-morales",
+    "title": "Spider Man Miles Morales",
+    "platforms": [
+      "PC"
+    ],
+    "series": [
+      "Spider-Man"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative"
+    ],
+    "rating": 77,
+    "completed": "2025-06-24",
+    "played": null,
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "dispatch",
+    "title": "Dispatch",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Narrative"
+    ],
+    "rating": 75,
+    "completed": "2025-12-01",
+    "played": null,
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "mafia-definitive-edition",
+    "title": "Mafia Definitive Edition",
+    "platforms": [
+      "PC"
+    ],
+    "series": [
+      "Mafia"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Third Person Shooter",
+      "Narrative"
+    ],
+    "rating": 75,
+    "completed": "2023-01-05",
+    "played": null,
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "mario-kart-world",
+    "title": "Mario Kart World",
+    "platforms": [
+      "Nintendo Switch 2"
+    ],
+    "series": [
+      "Super Mario",
+      "Mario Kart"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Racing"
+    ],
+    "rating": 75,
+    "completed": "2025-12-25",
+    "played": null,
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "spider-man-2018",
+    "title": "Spider Man (2018)",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Action",
+      "Open-World"
+    ],
+    "rating": 75,
+    "completed": "2023-06-24",
+    "played": null,
+    "releaseYear": 2018,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "ballxpit",
+    "title": "BallXPit",
+    "platforms": [
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Action"
+    ],
+    "rating": 73,
+    "completed": "2026-01-21",
+    "played": "2026-01-05",
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "hogwarts-legacy",
+    "title": "Hogwarts Legacy",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG",
+      "Open-World"
+    ],
+    "rating": 70,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2021,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "mafia-the-old-country",
+    "title": "Mafia The Old Country",
+    "platforms": [
+      "PC"
+    ],
+    "series": [
+      "Mafia"
+    ],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Third Person Shooter"
+    ],
+    "rating": 70,
+    "completed": "2025-08-30",
+    "played": null,
+    "releaseYear": 2025,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "stray",
+    "title": "Stray",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Dropped",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Puzzle"
+    ],
+    "rating": 70,
+    "completed": "2025-03-04",
+    "played": null,
+    "releaseYear": 2022,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "call-of-duty-black-ops-6",
+    "title": "Call of Duty Black Ops 6",
+    "platforms": [
+      "PC",
+      "PS5"
+    ],
+    "series": [
+      "Call of Duty"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": 65,
+    "completed": "2024-11-20",
+    "played": null,
+    "releaseYear": 2024,
+    "case": "PS5",
+    "launchboxId": null
+  },
+  {
+    "slug": "civilization-vii",
+    "title": "Civilization VII",
+    "platforms": [
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": 60,
+    "completed": "2025-03-04",
+    "played": "2025-02-27",
+    "releaseYear": 2023,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "mario-party-10",
+    "title": "Mario Party 10",
+    "platforms": [
+      "Wii U"
+    ],
+    "series": [
+      "Super Mario",
+      "Mario Party"
+    ],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": 40,
+    "completed": "2015-10-03",
+    "played": null,
+    "releaseYear": 2015,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "astro-bot",
+    "title": "Astro Bot",
+    "platforms": [
+      "PS5"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 3,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2024,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "baldurs-gate-3",
+    "title": "Baldur’s Gate 3",
+    "platforms": [
+      "PC"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2023,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "doom-eternal",
+    "title": "Doom Eternal",
+    "platforms": [
+      "PC"
+    ],
+    "series": [
+      "Doom"
+    ],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Action",
+      "First Person Shooter"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": 2020,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "final-fantasy-vii",
+    "title": "Final Fantasy VII",
+    "platforms": [
+      "PC",
+      "PS4"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "ghost-of-tsushima",
+    "title": "Ghost of Tsushima",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "grand-theft-auto-iv",
+    "title": "Grand Theft Auto IV",
+    "platforms": [
+      "PC",
+      "Xbox 360"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Sandbox",
+      "Narrative"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "kingdom-come-deliverance-ii",
+    "title": "Kingdom Come Deliverance II",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": null,
+    "completed": null,
+    "played": "2025-11-29",
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "nier-automata",
+    "title": "Nier Automata",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "red-dead-redemption",
+    "title": "Red Dead Redemption",
+    "platforms": [
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Open-World",
+      "Narrative"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "silent-hill-2",
+    "title": "Silent Hill 2",
+    "platforms": [
+      "PS5"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Horror"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "the-witcher-3",
+    "title": "The Witcher 3",
+    "platforms": [
+      "PC",
+      "Steam Deck"
+    ],
+    "series": [],
+    "status": "Backlog",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG",
+      "Open-World"
+    ],
+    "rating": null,
+    "completed": null,
+    "played": null,
+    "releaseYear": null,
+    "case": null,
+    "launchboxId": null
+  }
+]

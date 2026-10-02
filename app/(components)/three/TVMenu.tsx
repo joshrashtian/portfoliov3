@@ -12,9 +12,9 @@ export type TVMenuItem = {
 
 export const DEFAULT_TV_MENU: TVMenuItem[] = [
   { label: "Games", href: "https://2024.joshuarashtian.com/projects/game" },
-  { label: "2024's Portfolio", href: "https://2024.joshuarashtian.com" },
-  {label: "Back", href: "/" }
-
+  { label: "2024 Portfolio", href: "https://2024.joshuarashtian.com" },
+  { label: "Shelf", href: "/shelf" },
+  { label: "Back", href: "/" },
 ];
 
 /**
@@ -46,7 +46,6 @@ export default function TVMenu({
       <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_120px_60px_rgba(0,0,0,0.9)]" />
 
       <header className="relative flex items-baseline justify-between">
-
         <span className="font-mono text-2xl text-[#F26419]/70">MENU</span>
       </header>
 
@@ -62,17 +61,16 @@ export default function TVMenu({
             }`}
           >
             <span
-              className={`font-mono text-4xl transition-opacity duration-150 ${
+              className={`font-nippo text-4xl transition-opacity duration-150 ${
                 active === i ? "opacity-100" : "opacity-0"
               }`}
             >
               ▶
             </span>
             <span className="flex flex-col">
-              <span className="font-mono text-4xl tracking-wider text-[#e6ffec] drop-shadow-[0_0_12px_rgba(80,255,140,0.5)]">
+              <span className="font-nippo text-4xl tracking-wider text-[#e6ffec] drop-shadow-[0_0_12px_rgba(80,255,140,0.5)]">
                 {item.label}
               </span>
-
             </span>
           </Link>
         ))}

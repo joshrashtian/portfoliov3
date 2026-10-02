@@ -1,0 +1,703 @@
+{
+  "spider-man-2": {
+    "id": 473962,
+    "name": "spiderman2",
+    "platform": "PS5",
+    "match": "exact"
+  },
+  "grand-theft-auto-v": {
+    "id": 20953,
+    "name": "Grand Theft Auto V",
+    "platform": "Xbox One",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/grand-theft-auto-v-front.jpg",
+      "width": 600,
+      "height": 799,
+      "keyArt": false
+    },
+    "color": "#080808"
+  },
+  "minecraft": {
+    "id": 162375,
+    "name": "Minecraft",
+    "platform": "Nintendo Switch",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/minecraft-front.jpg",
+      "width": 600,
+      "height": 972,
+      "keyArt": false
+    },
+    "color": "#c8d8e8"
+  },
+  "red-dead-redemption-2": {
+    "id": 151630,
+    "name": "Red Dead Redemption II",
+    "platform": "Xbox One",
+    "match": "alternate",
+    "front": {
+      "src": "/games/launchbox/red-dead-redemption-2-front.jpg",
+      "width": 600,
+      "height": 772,
+      "keyArt": false
+    },
+    "color": "#080808"
+  },
+  "terraria": {
+    "id": 24893,
+    "name": "Terraria",
+    "platform": "PS4",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/terraria-front.jpg",
+      "width": 600,
+      "height": 757,
+      "keyArt": false
+    },
+    "color": "#080808"
+  },
+  "the-last-of-us": {
+    "id": 10392,
+    "name": "The Last of Us",
+    "platform": "PS3",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/the-last-of-us-front.jpg",
+      "width": 600,
+      "height": 686,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "persona-5-royal": {
+    "id": 179069,
+    "name": "Persona 5 Royal",
+    "platform": "PS4",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/persona-5-royal-front.jpg",
+      "width": 600,
+      "height": 748,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "super-mario-galaxy": {
+    "id": 40,
+    "name": "Super Mario Galaxy",
+    "platform": "Wii",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-mario-galaxy-front.jpg",
+      "width": 600,
+      "height": 842,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "super-mario-galaxy-2": {
+    "id": 163727,
+    "name": "Super Mario Galaxy 2",
+    "platform": "Wii",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-mario-galaxy-2-front.jpg",
+      "width": 600,
+      "height": 844,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "super-mario-maker": {
+    "id": 31277,
+    "name": "Super Mario Maker",
+    "platform": "Wii U",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-mario-maker-front.jpg",
+      "width": 600,
+      "height": 831,
+      "keyArt": false
+    },
+    "color": "#f8c808"
+  },
+  "super-smash-bros-ultimate": {
+    "id": 158007,
+    "name": "Super Smash Bros. Ultimate",
+    "platform": "Nintendo Switch",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-smash-bros-ultimate-front.jpg",
+      "width": 600,
+      "height": 977,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "expedition-33": {
+    "id": 472494,
+    "name": "Clair Obscur: Expedition 33",
+    "platform": "PS5",
+    "match": "loose"
+  },
+  "the-last-of-us-part-ii": {
+    "id": 121823,
+    "name": "The Last of Us Part II",
+    "platform": "PS4",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/the-last-of-us-part-ii-front.jpg",
+      "width": 600,
+      "height": 770,
+      "keyArt": false
+    },
+    "color": "#080808"
+  },
+  "animal-crossing-new-leaf": {
+    "id": 17019,
+    "name": "Animal Crossing: New Leaf",
+    "platform": "Nintendo 3DS",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/animal-crossing-new-leaf-front.jpg",
+      "width": 600,
+      "height": 531,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "persona-3-reload": {
+    "id": 448332,
+    "name": "Persona 3 Reload",
+    "platform": "PS5",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/persona-3-reload-front.jpg",
+      "width": 600,
+      "height": 757,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "persona-4-golden": {
+    "id": 182564,
+    "name": "Persona 4 Golden",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/persona-4-golden-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8f8"
+  },
+  "super-smash-bros-brawl": {
+    "id": 3518,
+    "name": "Super Smash Bros. Brawl",
+    "platform": "Wii",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-smash-bros-brawl-front.jpg",
+      "width": 600,
+      "height": 846,
+      "keyArt": false
+    },
+    "color": "#e8e8f8"
+  },
+  "titanfall-2": {
+    "id": 142906,
+    "name": "Titanfall 2",
+    "platform": "Xbox One",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/titanfall-2-front.jpg",
+      "width": 600,
+      "height": 760,
+      "keyArt": false
+    },
+    "color": "#38a838"
+  },
+  "balatro": {
+    "id": 463155,
+    "name": "Balatro",
+    "platform": "PS5",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/balatro-front.jpg",
+      "width": 600,
+      "height": 748,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "civilization-vi": {
+    "id": 161830,
+    "name": "Sid Meier's Civilization VI",
+    "platform": "Nintendo Switch",
+    "match": "loose",
+    "front": {
+      "src": "/games/launchbox/civilization-vi-front.jpg",
+      "width": 600,
+      "height": 971,
+      "keyArt": false
+    },
+    "color": "#182878"
+  },
+  "cyberpunk-2077": {
+    "id": 14517,
+    "name": "Cyberpunk 2077",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/cyberpunk-2077-front.jpg",
+      "width": 600,
+      "height": 847,
+      "keyArt": false
+    },
+    "color": "#f8e808"
+  },
+  "mario-kart-wii": {
+    "id": 169,
+    "name": "Mario Kart Wii",
+    "platform": "Wii",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/mario-kart-wii-front.jpg",
+      "width": 600,
+      "height": 849,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "satisfactory": {
+    "id": 166160,
+    "name": "Satisfactory",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/satisfactory-front.jpg",
+      "width": 340,
+      "height": 476,
+      "keyArt": false
+    },
+    "color": "#c8d8e8"
+  },
+  "stardew-valley": {
+    "id": 129298,
+    "name": "Stardew Valley",
+    "platform": "Xbox One",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/stardew-valley-front.jpg",
+      "width": 342,
+      "height": 433,
+      "keyArt": false
+    },
+    "color": "#f8a808"
+  },
+  "arc-raiders": {
+    "id": 462970,
+    "name": "Arc Raiders",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/arc-raiders-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#180818"
+  },
+  "hades": {
+    "id": 167721,
+    "name": "Hades",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/hades-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#080808"
+  },
+  "celeste": {
+    "id": 144286,
+    "name": "Celeste",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/celeste-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#381828"
+  },
+  "far-cry-3": {
+    "id": 4419,
+    "name": "Far Cry 3",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/far-cry-3-front.jpg",
+      "width": 600,
+      "height": 848,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "forza-horizon-6": {
+    "id": 472514,
+    "name": "Forza Horizon 6",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/forza-horizon-6-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8f8"
+  },
+  "horizon-forbidden-west": {
+    "id": 209651,
+    "name": "Horizon Forbidden West",
+    "platform": "PS5",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/horizon-forbidden-west-front.jpg",
+      "width": 600,
+      "height": 752,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "risk-of-rain-2": {
+    "id": 166604,
+    "name": "Risk of Rain 2",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/risk-of-rain-2-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8f8"
+  },
+  "super-mario-3d-world-bowsers-fury": {
+    "id": 195306,
+    "name": "Super Mario 3D World + Bowser's Fury",
+    "platform": "Nintendo Switch",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/super-mario-3d-world-bowsers-fury-front.jpg",
+      "width": 493,
+      "height": 800,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "the-alters": {
+    "id": 458358,
+    "name": "The Alters",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/the-alters-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f80868"
+  },
+  "palworld": {
+    "id": 439908,
+    "name": "Palworld",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/palworld-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8f8"
+  },
+  "spider-man-miles-morales": {
+    "id": 436810,
+    "name": "Marvel's Spider-Man: Miles Morales",
+    "platform": "PC",
+    "match": "loose",
+    "front": {
+      "src": "/games/launchbox/spider-man-miles-morales-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#080818"
+  },
+  "dispatch": {
+    "id": 462706,
+    "name": "Dispatch",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/dispatch-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8f8"
+  },
+  "mafia-definitive-edition": {
+    "id": 192489,
+    "name": "Mafia: Definitive Edition",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/mafia-definitive-edition-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8e8c8"
+  },
+  "mario-kart-world": {
+    "id": 457888,
+    "name": "Mario Kart World",
+    "platform": "Nintendo Switch 2",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/mario-kart-world-front.jpg",
+      "width": 600,
+      "height": 983,
+      "keyArt": false
+    },
+    "color": "#e80818"
+  },
+  "ballxpit": {
+    "id": 462489,
+    "name": "BALL x PIT",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/ballxpit-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#480828"
+  },
+  "hogwarts-legacy": {
+    "id": 218653,
+    "name": "Hogwarts Legacy",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/hogwarts-legacy-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#d8d8d8"
+  },
+  "mafia-the-old-country": {
+    "id": 460023,
+    "name": "Mafia: The Old Country",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/mafia-the-old-country-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#180808"
+  },
+  "stray": {
+    "id": 213514,
+    "name": "Stray",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/stray-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#581818"
+  },
+  "civilization-vii": {
+    "id": 455856,
+    "name": "Sid Meier's Civilization VII",
+    "platform": "PC",
+    "match": "loose",
+    "front": {
+      "src": "/games/launchbox/civilization-vii-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#d8c8c8"
+  },
+  "mario-party-10": {
+    "id": 25042,
+    "name": "Mario Party 10",
+    "platform": "Wii U",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/mario-party-10-front.jpg",
+      "width": 600,
+      "height": 844,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "astro-bot": {
+    "id": 450841,
+    "name": "Astro Bot",
+    "platform": "PS5",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/astro-bot-front.jpg",
+      "width": 600,
+      "height": 744,
+      "keyArt": false
+    },
+    "color": "#e8e8e8"
+  },
+  "baldurs-gate-3": {
+    "id": 447791,
+    "name": "Baldur's Gate 3",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/baldurs-gate-3-front.jpg",
+      "width": 600,
+      "height": 863,
+      "keyArt": false
+    },
+    "color": "#184878"
+  },
+  "doom-eternal": {
+    "id": 176820,
+    "name": "DOOM Eternal",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/doom-eternal-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#e8e8e8"
+  },
+  "final-fantasy-vii": {
+    "id": 162417,
+    "name": "Final Fantasy VII",
+    "platform": "PS4",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/final-fantasy-vii-front.jpg",
+      "width": 600,
+      "height": 751,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "ghost-of-tsushima": {
+    "id": 446794,
+    "name": "Ghost of Tsushima Director's Cut",
+    "platform": "PC",
+    "match": "alternate",
+    "front": {
+      "src": "/games/launchbox/ghost-of-tsushima-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#f8f8e8"
+  },
+  "grand-theft-auto-iv": {
+    "id": 7484,
+    "name": "Grand Theft Auto IV",
+    "platform": "Xbox 360",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/grand-theft-auto-iv-front.jpg",
+      "width": 600,
+      "height": 842,
+      "keyArt": false
+    },
+    "color": "#080818"
+  },
+  "kingdom-come-deliverance-ii": {
+    "id": 455473,
+    "name": "Kingdom Come: Deliverance II",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/kingdom-come-deliverance-ii-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#181818"
+  },
+  "nier-automata": {
+    "id": 126307,
+    "name": "NieR: Automata",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/nier-automata-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#d8e8e8"
+  },
+  "red-dead-redemption": {
+    "id": 452744,
+    "name": "Red Dead Redemption",
+    "platform": "PC",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/red-dead-redemption-front.jpg",
+      "width": 600,
+      "height": 900,
+      "keyArt": true
+    },
+    "color": "#080808"
+  },
+  "silent-hill-2": {
+    "id": 454868,
+    "name": "Silent Hill 2",
+    "platform": "PS5",
+    "match": "exact",
+    "front": {
+      "src": "/games/launchbox/silent-hill-2-front.jpg",
+      "width": 551,
+      "height": 688,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  },
+  "the-witcher-3": {
+    "id": 33255,
+    "name": "The Witcher 3: Wild Hunt",
+    "platform": "PC",
+    "match": "loose",
+    "front": {
+      "src": "/games/launchbox/the-witcher-3-front.jpg",
+      "width": 600,
+      "height": 861,
+      "keyArt": false
+    },
+    "color": "#f8f8f8"
+  }
+}
