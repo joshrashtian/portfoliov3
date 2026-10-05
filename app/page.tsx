@@ -149,31 +149,34 @@ export default function Home() {
                   <div className="relative z-10 mt-10 flex flex-col gap-8 sm:mt-14 sm:flex-row sm:items-end sm:justify-between">
                     <div className="max-w-lg">
                       <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-                        Full Stack Engineer + Computer Science Student, 3 years
-                        of experience. Based between Los Angeles and San Luis
-                        Obispo.
+                        Full Stack Engineer and Computer Science Student with 4
+                        years of experience and a history of game development
+                        and filmography.
                       </p>
                       <div className="mt-4 flex flex-row gap-4 text-2xl">
                         <Link
                           target="_blank"
                           aria-label="GitHub"
+                          className="flex items-center gap-1 font-mono text-sm hover:text-zinc-700 duration-300 text-zinc-500"
                           href="https://github.com/joshrashtian"
                         >
-                          <IoLogoGithub />
+                          <IoLogoGithub className="text-base" /> GitHub
                         </Link>
                         <Link
                           target="_blank"
                           aria-label="LinkedIn"
+                          className="flex items-center gap-1 font-mono text-sm hover:text-zinc-700 duration-300 text-zinc-500"
                           href="https://www.linkedin.com/in/joshrashtian/"
                         >
-                          <IoLogoLinkedin />
+                          <IoLogoLinkedin className="text-base" /> LinkedIn
                         </Link>
                         <Link
                           target="_blank"
                           aria-label="Instagram"
+                          className="flex items-center gap-1 font-mono text-sm hover:text-zinc-700 duration-300 text-zinc-500"
                           href="https://www.instagram.com/joshuajrashtian/"
                         >
-                          <IoLogoInstagram />
+                          <IoLogoInstagram className="text-base" /> Instagram
                         </Link>
                       </div>
                     </div>
@@ -213,21 +216,6 @@ export default function Home() {
               {isFlipped ? "Back to Front" : "Flip to Contact"}
             </button>
           </div>
-
-          <button
-            type="button"
-            onClick={() => setTiltEnabled((prev) => !prev)}
-            aria-pressed={tiltEnabled}
-            aria-label={
-              tiltEnabled ? "Disable tilt effect" : "Enable tilt effect"
-            }
-            className="absolute bottom-12 right-0 z-20 -rotate-3 flex items-center gap-1.5 rounded-full border border-black/10 bg-blue-500 text-white px-3 py-1.5 text-xs font-medium  backdrop-blur transition hover:bg-blue-400 dark:border-white/10 dark:bg-black/40 dark:text-zinc-300 dark:hover:bg-black/60"
-          >
-            <IoCubeOutline
-              className={`${tiltEnabled ? "" : "opacity-40"} duration-500`}
-            />
-            {tiltEnabled ? "Tilt: On" : "Tilt: Off"}
-          </button>
         </motion.div>
         <div
           className="h-full flex items-center justify-center  "

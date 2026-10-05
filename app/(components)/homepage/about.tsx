@@ -87,7 +87,10 @@ const SNIPPETS: Record<string, Snippet> = {
       ],
       [
         { text: "  location_coordinates: " },
-        { text: `[${HOME.coordinates.join(", ")}],`, className: "text-orange-500" },
+        {
+          text: `[${HOME.coordinates.join(", ")}],`,
+          className: "text-orange-500",
+        },
       ],
       [
         { text: "  location: " },
@@ -105,9 +108,7 @@ const LANGUAGE_ORDER = ["C++", "Java", "TypeScript"];
 // ---------------------------------------------------------------------------
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-sm text-zinc-400 dark:text-zinc-500">{children}</p>
-  );
+  return <p className="text-sm text-zinc-400 dark:text-zinc-500">{children}</p>;
 }
 
 function ProfileHero() {
@@ -163,7 +164,10 @@ function LanguageShowcase() {
 
       <div className="max-w-full space-y-1 overflow-x-auto font-mono text-xs sm:space-y-2 sm:text-sm lg:text-base">
         {snippet.lines.map((line, i) => (
-          <pre key={i} className="overflow-x-auto whitespace-pre-wrap wrap-break-word">
+          <pre
+            key={i}
+            className="overflow-x-auto whitespace-pre-wrap wrap-break-word"
+          >
             {line.map((token, j) => (
               <span key={j} className={token.className}>
                 {token.text}
@@ -178,20 +182,20 @@ function LanguageShowcase() {
 
 function LocationCard() {
   return (
-    <div className="p-5 sm:p-6 lg:p-8">
-      <SectionLabel>Based in</SectionLabel>
-      <div className="mt-4 flex flex-col items-center gap-4">
-        {/* <Globe coordinates={HOME.coordinates} /> */}
-        <div className="relative h-48 w-48 overflow-hidden rounded-full border border-zinc-200 shadow-inner sm:h-56 sm:w-56 dark:border-zinc-800">
-          <Image
-            src={SLOMap}
-            alt="Map centered on San Luis Obispo, California"
-            fill
-            sizes="224px"
-            className="origin-[50%_38%] scale-[1.4] object-cover grayscale contrast-125 dark:brightness-90 dark:invert"
-          />
-        </div>
-        <p className="text-base font-bold sm:text-lg">{HOME.city}</p>
+    <div className="  h-84 w-full flex flex-col items-center gap-4">
+      <div className="relative h-full w-full overflow-hidden  border border-zinc-200   dark:border-zinc-800">
+        <Image
+          src={SLOMap}
+          alt="Map centered on San Luis Obispo, California"
+          fill
+          sizes="224px"
+          className="origin-[50%_38%] object-cover   dark:brightness-90 dark:invert"
+        />
+        <section className="absolute font-mono bottom-0 left-0 right-0 bg-black/50 p-4">
+          <h1 className="text-lg font-bold text-white">
+            Based in San Luis Obispo, CA
+          </h1>
+        </section>
       </div>
     </div>
   );
@@ -230,13 +234,9 @@ function SkillsetGrid() {
   );
 }
 
-// ---------------------------------------------------------------------------
-// Page
-// ---------------------------------------------------------------------------
-
 const About = () => {
   return (
-    <div className="mx-auto w-full max-w-6xl rounded-3xl bg-stone-50 p-6 shadow-sm sm:p-10 lg:p-14 dark:bg-zinc-950">
+    <div className="mx-auto w-full max-w-6xl bg-stone-50 p-6 border border-zinc-200 dark:border-zinc-800 sm:p-10 lg:p-14 dark:bg-zinc-950">
       <div className="mb-6 sm:mb-8">
         <SectionLabel>About</SectionLabel>
         <div className="mt-3 h-px w-full bg-zinc-200 dark:bg-zinc-800" />

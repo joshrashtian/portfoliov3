@@ -4,9 +4,9 @@ const CalPoly = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 247 60.834"
-      width={247}
-      height={60.834}
+      viewBox="0 0 49.5 61.2"
+      width={49.5}
+      height={61.2}
       {...props}
     >
       <g transform="matrix(.43911 0 0 .43911 -1.2554 -1.2423)">

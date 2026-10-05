@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {
   Climate_Crisis,
+  DM_Mono,
   Gabarito,
-  Google_Sans_Code,
   JetBrains_Mono,
   Lexend,
   Nunito,
@@ -56,10 +56,10 @@ const neue = localFont({
   display: "swap",
 });
 
-const mono = Google_Sans_Code({
-  variable: "--font-google-sans-code",
+const mono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "500"],
   display: "swap",
   adjustFontFallback: false,
   fallback: ["ui-monospace", "monospace"],
