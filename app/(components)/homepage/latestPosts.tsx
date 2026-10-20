@@ -3,6 +3,7 @@ import { IoArrowForward } from "react-icons/io5";
 import { fetchBlogsByNumber } from "@/app/lib/notion";
 import { toBlogPost } from "@/app/lib/notion-utils";
 import { ColorSchema } from "../../color";
+import { PiNotionLogo, PiNotionLogoBold, PiNotionLogoFill } from "react-icons/pi";
 
 const POST_COUNT = 3;
 
@@ -17,12 +18,14 @@ export default async function LatestPosts() {
       <div className="flex items-end justify-between gap-4">
         <h2 className="font-climate-crisis text-4xl leading-[0.9] tracking-tight sm:text-6xl">
           Latest Writing
+          <p className="font-mono flex items-center gap-2 text-lg"><PiNotionLogoFill /> powered by <span className={`${ColorSchema.muted_text} `}>Notion API</span></p>
         </h2>
+
         <Link
           href="/blog"
           className={`inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold transition ${ColorSchema.text_maroon} ${ColorSchema.hover_text_maroon}`}
         >
-          See all posts <IoArrowForward />
+          See All Posts <IoArrowForward />
         </Link>
       </div>
 

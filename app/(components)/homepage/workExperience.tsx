@@ -6,12 +6,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "motion/react";
 import { CLOSE_SOUND, SELECT_SOUND, useSound } from "../useSound";
 import HACKMESAIcon from "../../(assets)/images/hackmesa.png";
+import Hack4ImpactIcon from "../svgs/hack4impact.png";
 import { work } from "@/app/data";
 import { IoChevronForward } from "react-icons/io5";
 
 type Job = (typeof work)[0];
 
 const logos: Record<string, StaticImageData> = {
+  "Hack4Impact Cal Poly": Hack4ImpactIcon,
   HACKMESA: HACKMESAIcon,
   MESA: MESAIcon,
 };

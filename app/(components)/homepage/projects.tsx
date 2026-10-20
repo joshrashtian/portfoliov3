@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { forwardRef } from "react";
+import { forwardRef, type ReactNode } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import MESAConnectImage from "../../(assets)/images/projects/mesaconnectproject.png";
 import Image from "next/image";
 import CalendarPreview from "../../(assets)/images/projects/CalendarPreviewScreenshot.png";
 
 import {
+  IoArrowForward,
+  IoBook,
   IoGitBranch,
   IoGlobe,
   IoLogoApple,
@@ -20,8 +22,48 @@ import MESAConnectPathway from "../../(assets)/images/projects/mesaconnect-pathw
 import MESAMobileProfile from "../../(assets)/images/projects/mesamobile-profile.webp";
 import MESAMobilePost from "../../(assets)/images/projects/mesamobile-post.webp";
 import { Playwrite_US_Modern } from "next/font/google";
+import { IoLogoGithub } from "react-icons/io";
 
 const playwrite = Playwrite_US_Modern({ weight: "400" });
+
+// Shared project link. `primary` takes a brand color class (e.g. "bg-blue-500"); the others are neutral.
+function ProjectLink({
+  href,
+  icon,
+  children,
+  variant = "secondary",
+  color = "bg-zinc-800",
+}: {
+  href: string;
+  icon: ReactNode;
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "outline";
+  color?: string;
+}) {
+  const external = href.startsWith("http");
+  const styles = {
+    primary: `${color} text-white shadow-md shadow-black/10 hover:brightness-110`,
+    secondary:
+      "bg-zinc-900 text-white shadow-md shadow-black/10 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white",
+    outline:
+      "border border-zinc-300 bg-white/60 text-zinc-800 hover:border-zinc-400 hover:bg-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:text-zinc-100 dark:hover:border-zinc-500",
+  }[variant];
+
+  return (
+    <Link
+      href={href}
+      target={external ? "_blank" : undefined}
+      onClick={(e) => e.stopPropagation()}
+      className={`group/link inline-flex items-center gap-2 rounded-full px-4 py-2 font-mono text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7a1620] ${styles}`}
+    >
+      <span className="text-base">{icon}</span>
+      {children}
+      {external && (
+        <IoArrowForward className="-ml-0.5 -rotate-45 opacity-60 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 group-hover/link:opacity-100" />
+      )}
+    </Link>
+  );
+}
 export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
   return (
     <div
@@ -174,22 +216,13 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
               </g>
             </svg>
           </div>
-          <div className="flex flex-row items-center">
-          <Link
-            href="https://risebyday.com"
-            target="_blank"
-            className="bg-blue-400 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center font-mono"
-          >
-            <IoGlobe />
-            Visit Website
-          </Link>
-          <Link
-            href="https://github.com/joshrashtian/risebyday"
-            target="_blank"
-            className="bg-zinc-800 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center font-mono"
-          >
-            <IoGitBranch /> Source Code
-            </Link>
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            <ProjectLink href="https://risebyday.com" icon={<IoGlobe />} variant="primary" color="bg-blue-500">
+              Visit Website
+            </ProjectLink>
+            <ProjectLink href="https://github.com/joshrashtian/risebyday" icon={<IoLogoGithub />}>
+              GitHub
+            </ProjectLink>
           </div>
         </div>
       </button>
@@ -344,23 +377,17 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
             </svg>
             <IoLogoCss3 className="w-8 h-8 text-purple-500" />
           </div>
-          <ol className="flex flex-row flex-wrap gap-2 font-mono">
-            <Link
-              href="https://mesaconnect.io"
-              target="_blank"
-              className="bg-orange-400 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center"
-            >
-              <IoGlobe />
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            <ProjectLink href="https://mesaconnect.io" icon={<IoGlobe />} variant="primary" color="bg-orange-500">
               View Project
-            </Link>
-            <Link
-              href="https://github.com/joshrashtian/mesaconnect2.0"
-              target="_blank"
-              className="bg-zinc-800 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center"
-            >
-              <IoGitBranch /> Source Code
-            </Link>
-          </ol>
+            </ProjectLink>
+            <ProjectLink href="https://github.com/joshrashtian/mesaconnect2.0" icon={<IoGitBranch />}>
+              Source Code
+            </ProjectLink>
+            <ProjectLink href="/projects/mesaconnect" icon={<IoBook />} variant="outline">
+              Case Study
+            </ProjectLink>
+          </div>
         </div>
       </button>
       <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg bg-zinc-100 p-5 duration-500 dark:bg-zinc-900 xl:h-84 xl:flex-row xl:gap-2">
@@ -499,16 +526,11 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
               />
             </svg>
           </div>
-          <ol className="flex flex-row flex-wrap gap-2 font-mono">
-            <Link
-              href="https://apps.apple.com/us/app/mesamobile/id6504261825"
-              target="_blank"
-              className="bg-zinc-800 text-white px-4 py-2 rounded-lg flex flex-row gap-2 items-center justify-center"
-            >
-              <IoLogoApple />
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            <ProjectLink href="https://apps.apple.com/us/app/mesamobile/id6504261825" icon={<IoLogoApple />}>
               App Store
-            </Link>
-          </ol>
+            </ProjectLink>
+          </div>
         </div>
       </button>
     </div>

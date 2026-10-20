@@ -14,8 +14,6 @@ type Education = {
   clubs?: string[];
   awards?: string[];
   activities?: string[];
-  // Shown in View Details, newest term first. Falls back to `classes` when empty.
-  // e.g. { term: "Fall 2023", classes: ["Calculus"], milestones: ["Joined MESA"] }
   timeline?: TimelineEntry[];
 };
 
@@ -122,9 +120,18 @@ type Work = {
 
 export const work: Work[] = [
   {
+    company: "Hack4Impact Cal Poly",
+    role: "Software Engineer",
+    location: "San Luis Obispo, California",
+    startDate: "October 2026",
+    endDate: "Present",
+    details: ["Offered after Bootcamp Project Placed Top 5"],
+   technologies_used: ["React", "NextJS", "MongoDB"]
+  },
+  {
     company: "HACKMESA",
     role: "Lead Backend Engineer + Announcer",
-    location: "Los Angeles City College / Los Angeles Athletics Club",
+    location: "Los Angeles City College, Los Angeles, California",
     startDate: "December 2025",
     endDate: "April 2026",
     details: [
