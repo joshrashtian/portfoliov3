@@ -1,5 +1,26 @@
 [
   {
+    "slug": "kingdom-hearts",
+    "title": "Kingdom Hearts",
+    "platforms": [
+      "PS2"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": true,
+    "isRepeat": false,
+    "genres": [
+      "RPG",
+      "Action"
+    ],
+    "rating": null,
+    "completed": "2026-10-04",
+    "played": null,
+    "releaseYear": 2002,
+    "case": null,
+    "launchboxId": null
+  },
+  {
     "slug": "spider-man-2",
     "title": "Spider-Man 2",
     "platforms": [
@@ -77,6 +98,29 @@
     "launchboxId": null
   },
   {
+    "slug": "persona-5-royal",
+    "title": "Persona 5 Royal",
+    "platforms": [
+      "PC",
+      "Steam Deck",
+      "PS5",
+      "PS4"
+    ],
+    "series": [],
+    "status": "Completed",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "RPG"
+    ],
+    "rating": 100,
+    "completed": "2026-02-17",
+    "played": "2026-02-02",
+    "releaseYear": 2017,
+    "case": null,
+    "launchboxId": null
+  },
+  {
     "slug": "red-dead-redemption-2",
     "title": "Red Dead Redemption 2",
     "platforms": [
@@ -149,25 +193,25 @@
     "launchboxId": null
   },
   {
-    "slug": "persona-5-royal",
-    "title": "Persona 5 Royal",
+    "slug": "persona-3-reload",
+    "title": "Persona 3 Reload",
     "platforms": [
-      "PC",
-      "Steam Deck",
       "PS5",
-      "PS4"
+      "PC"
     ],
-    "series": [],
-    "status": "Completed",
+    "series": [
+      "Persona"
+    ],
+    "status": "Finished",
     "isPlaying": false,
     "isRepeat": false,
     "genres": [
       "RPG"
     ],
-    "rating": 97,
-    "completed": "2026-02-17",
-    "played": "2026-02-02",
-    "releaseYear": 2017,
+    "rating": 99,
+    "completed": "2026-03-07",
+    "played": "2026-02-20",
+    "releaseYear": null,
     "case": null,
     "launchboxId": null
   },
@@ -325,29 +369,6 @@
     "completed": null,
     "played": null,
     "releaseYear": 2013,
-    "case": null,
-    "launchboxId": null
-  },
-  {
-    "slug": "persona-3-reload",
-    "title": "Persona 3 Reload",
-    "platforms": [
-      "PS5",
-      "PC"
-    ],
-    "series": [
-      "Persona"
-    ],
-    "status": "Finished",
-    "isPlaying": false,
-    "isRepeat": false,
-    "genres": [
-      "RPG"
-    ],
-    "rating": 93,
-    "completed": "2026-03-07",
-    "played": "2026-02-20",
-    "releaseYear": null,
     "case": null,
     "launchboxId": null
   },
@@ -545,6 +566,26 @@
     "completed": "2026-02-01",
     "played": "2026-01-15",
     "releaseYear": 2016,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "super-mario-bros-wonder",
+    "title": "Super Mario Bros. Wonder",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "series": [],
+    "status": "Finished",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [
+      "Platformer"
+    ],
+    "rating": 90,
+    "completed": "2023-11-02",
+    "played": null,
+    "releaseYear": 2023,
     "case": null,
     "launchboxId": null
   },
@@ -1016,6 +1057,24 @@
     "completed": "2025-03-04",
     "played": null,
     "releaseYear": 2022,
+    "case": null,
+    "launchboxId": null
+  },
+  {
+    "slug": "tomodachi-life-living-the-dream",
+    "title": "Tomodachi Life Living The Dream",
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "series": [],
+    "status": "Played",
+    "isPlaying": false,
+    "isRepeat": false,
+    "genres": [],
+    "rating": 70,
+    "completed": "2026-04-23",
+    "played": null,
+    "releaseYear": 2021,
     "case": null,
     "launchboxId": null
   },

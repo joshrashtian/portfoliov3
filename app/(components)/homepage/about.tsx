@@ -4,6 +4,7 @@ import Globe from "./globe";
 import LAACImage from "../../(assets)/images/LAAC.jpg";
 import Image from "next/image";
 import SLOMap from "../../(assets)/images/front_page/SLOMap.png";
+import { ColorSchema } from "../../color";
 // ---------------------------------------------------------------------------
 // Data (single source of truth)
 // ---------------------------------------------------------------------------
@@ -31,7 +32,7 @@ const SNIPPETS: Record<string, Snippet> = {
       [
         { text: "int ", className: "text-blue-500" },
         { text: "years_of_experience = " },
-        { text: `${HOME.yearsOfExperience}`, className: "text-orange-500" },
+        { text: `${HOME.yearsOfExperience}`, className: ColorSchema.text_maroon },
         { text: ";" },
       ],
       [
@@ -50,14 +51,14 @@ const SNIPPETS: Record<string, Snippet> = {
   Java: {
     lines: [
       [
-        { text: "public class ", className: "text-orange-500" },
+        { text: "public class ", className: ColorSchema.text_maroon },
         { text: "Details ", className: "text-teal-700" },
-        { text: "extends AboutMe {", className: "text-orange-500" },
+        { text: "extends AboutMe {", className: ColorSchema.text_maroon },
       ],
       [
         { text: "  private int ", className: "text-blue-500" },
         { text: "years_of_experience = " },
-        { text: `${HOME.yearsOfExperience}`, className: "text-orange-500" },
+        { text: `${HOME.yearsOfExperience}`, className: ColorSchema.text_maroon },
         { text: ";" },
       ],
       [
@@ -71,7 +72,7 @@ const SNIPPETS: Record<string, Snippet> = {
         { text: `"${HOME.city}"`, className: "text-green-700" },
         { text: ";" },
       ],
-      [{ text: "}", className: "text-orange-500" }],
+      [{ text: "}", className: ColorSchema.text_maroon }],
     ],
   },
   TypeScript: {
@@ -79,24 +80,24 @@ const SNIPPETS: Record<string, Snippet> = {
       [
         { text: "export const ", className: "text-blue-500" },
         { text: "Details ", className: "text-teal-700" },
-        { text: "= {", className: "text-orange-500" },
+        { text: "= {", className: ColorSchema.text_maroon },
       ],
       [
         { text: "  years_of_experience: " },
-        { text: `${HOME.yearsOfExperience},`, className: "text-orange-500" },
+        { text: `${HOME.yearsOfExperience},`, className: ColorSchema.text_maroon },
       ],
       [
         { text: "  location_coordinates: " },
         {
           text: `[${HOME.coordinates.join(", ")}],`,
-          className: "text-orange-500",
+          className: ColorSchema.text_maroon,
         },
       ],
       [
         { text: "  location: " },
         { text: `"${HOME.city}",`, className: "text-green-700" },
       ],
-      [{ text: "}", className: "text-orange-500" }],
+      [{ text: "}", className: ColorSchema.text_maroon }],
     ],
   },
 };

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Playwrite_US_Modern } from "next/font/google";
+import { ColorSchema } from "../../color";
 
 const playwrite = Playwrite_US_Modern({ weight: "400" });
 
@@ -88,7 +89,7 @@ export default function Contact() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Name"
-                  className="border-b border-black/30 bg-transparent py-1 text-sm outline-none focus:border-orange-400 dark:border-white/30"
+                  className={`border-b border-black/30 bg-transparent py-1 text-sm outline-none ${ColorSchema.focus_border_maroon} dark:border-white/30`}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -105,7 +106,7 @@ export default function Contact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="border-b border-black/30 bg-transparent py-1 text-sm outline-none focus:border-orange-400 dark:border-white/30"
+                  className={`border-b border-black/30 bg-transparent py-1 text-sm outline-none ${ColorSchema.focus_border_maroon} dark:border-white/30`}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -122,7 +123,7 @@ export default function Contact() {
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   placeholder="Let's work together"
-                  className="border-b border-black/30 bg-transparent py-1 text-sm outline-none focus:border-orange-400 dark:border-white/30"
+                  className={`border-b border-black/30 bg-transparent py-1 text-sm outline-none ${ColorSchema.focus_border_maroon} dark:border-white/30`}
                 />
               </div>
             </div>
@@ -132,7 +133,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="-skew-x-12 self-start rounded-lg bg-orange-400 px-6 py-2 font-header text-sm font-bold text-black transition-all duration-300 hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
+              className={`-skew-x-12 self-start rounded-lg ${ColorSchema.core_maroon} ${ColorSchema.hover_maroon} px-6 py-2 font-header text-sm font-bold text-white transition-all duration-300 hover:scale-105 disabled:opacity-60 disabled:hover:scale-100`}
             >
               <span className="block skew-x-12">
                 {status === "loading" ? "Sending..." : "Send Postcard"}

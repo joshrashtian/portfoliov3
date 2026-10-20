@@ -6,6 +6,7 @@ import {
   SiNintendo3Ds,
   SiNintendoswitch,
   SiPlaystation,
+  SiPlaystation2,
   SiPlaystation3,
   SiPlaystation4,
   SiPlaystation5,
@@ -55,6 +56,13 @@ const CASES: Record<string, Box> = {
     cover: "PS3",
     spine: "PS3",
     logo: SiPlaystation3,
+    spineLogo: "along",
+  },
+  PS2: {
+    key: "ps2",
+    cover: "PS2",
+    spine: "PS2",
+    logo: SiPlaystation2,
     spineLogo: "along",
   },
   "Xbox One": {

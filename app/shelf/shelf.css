@@ -154,6 +154,15 @@
   --band: #000;
 }
 
+/* DVD-sized, black plastic and band. */
+[data-case="ps2"] {
+  --hh: 190;
+  --d: 14;
+  --band-h: 18;
+  --case: #111;
+  --band: #000;
+}
+
 [data-case="xbox-one"] {
   --case: #0e7a0d;
   --band: #107c10;

@@ -27,7 +27,7 @@ const ProjectMenu = () => {
       <header className="flex flex-row flex-wrap font-climate-crisis w-full px-4 mx-auto justify-center items-center gap-x-6 gap-y-2 sm:gap-8 md:gap-16">
         {[
           { key: "projects", label: "Projects" },
-          { key: "workExperience", label: "Work Experience" },
+          { key: "workExperience", label: "Experience" },
           { key: "education", label: "Education" },
         ].map((tab) => (
           <button

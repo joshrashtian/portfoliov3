@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { fetchBlogs } from "@/app/lib/notion";
 import { toBlogPost } from "@/app/lib/notion-utils";
+import { ColorSchema } from "@/app/color";
 
 export const metadata = {
   title: "Blog | Joshua Rashtian",
@@ -26,7 +27,7 @@ export default async function BlogIndexPage() {
         </Link>
 
         <h1 className="mt-6 font-climate-crisis text-6xl leading-[0.9] tracking-tight sm:text-8xl">
-          The Blog
+          My Blog
         </h1>
         <p className="mt-4 max-w-lg text-base text-zinc-600 dark:text-zinc-400">
           Notes, projects, and whatever else I&apos;m thinking about.
@@ -47,7 +48,7 @@ export default async function BlogIndexPage() {
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     {post.type && (
-                      <span className="rounded-full -skew-2 bg-black px-3 py-1 text-xs font-semibold font-nippo text-white dark:bg-white dark:text-black">
+                      <span className="rounded-full -skew-2 bg-black px-3 py-1 text-xs font-semibold font-mono text-white dark:bg-white dark:text-black">
                         <p className="skew-2">{post.type}</p>
                       </span>
                     )}
@@ -61,7 +62,7 @@ export default async function BlogIndexPage() {
                       </span>
                     )}
                   </div>
-                  <h2 className="mt-3 text-2xl font-nippo  sm:text-3xl">
+                  <h2 className="mt-3 text-2xl font-mono  sm:text-3xl">
                     {post.title}
                   </h2>
                   {post.summary && (
@@ -81,7 +82,7 @@ export default async function BlogIndexPage() {
                       ))}
                     </div>
                   )}
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 transition">
+                  <span className={`mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition ${ColorSchema.text_maroon}`}>
                     Read post <IoArrowForward />
                   </span>
                 </div>

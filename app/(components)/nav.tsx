@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import { CLOSE_SOUND, SELECT_SOUND, useSound } from "./useSound";
+import { ColorSchema } from "../color";
 
 /**
  * The nav lives in the root layout, so it can't hold the homepage's section
@@ -21,13 +22,12 @@ const navItems: NavItem[] = [
   { kind: "section", id: "home", label: "Home" },
   { kind: "section", id: "about", label: "About" },
   { kind: "section", id: "experience", label: "Experience" },
-  { kind: "section", id: "contact", label: "Contact" },
-  { kind: "route", href: "/blog", label: "Blog", sound: true },
+  { kind: "section", id: "blog", label: "Blog" },
   { kind: "route", href: "/extra", label: "Bonus Features" },
 ];
 
 const buttonClass =
-  "relative group text-zinc-600 transition-all duration-300 justify-center items-start flex flex-col border-zinc-200 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded px-2";
+  "relative isolate rounded-full px-4 py-2 text-[15px] font-semibold tracking-tight transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 dark:focus-visible:ring-[#c23b4a]/50";
 
 const Navigation = () => {
   const nav = useRouter();
@@ -35,8 +35,70 @@ const Navigation = () => {
   const playBlip = useSound(SELECT_SOUND);
   const playClose = useSound(CLOSE_SOUND);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  // The item just clicked. The pill jumps straight to it and stays put while
+  // the route loads or the page smooth-scrolls past other sections, instead
+  // of trailing behind reality and hopping through everything in between.
+  const [pinned, setPinned] = useState<string | null>(null);
 
   useEffect(() => setMenuOpen(false), [pathname]);
+
+  // Scroll-spy: the last homepage section whose top has passed the middle of
+  // the viewport is the selected one. Sections are looked up on every scroll
+  // since the page can mount after the nav.
+  useEffect(() => {
+    if (pathname !== "/") {
+      // Forget the old section so coming back doesn't flash it first.
+      setActiveSection("home");
+      return;
+    }
+    const onScroll = () => {
+      let current: string | undefined;
+      document
+        .querySelectorAll<HTMLElement>("[data-nav-section]")
+        .forEach((el) => {
+          if (el.getBoundingClientRect().top <= window.innerHeight / 2) {
+            current = el.dataset.navSection;
+          }
+        });
+      if (current) setActiveSection(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
+
+  const isCurrent = useCallback(
+    (item: NavItem) => {
+      if (item.kind === "route") return pathname.startsWith(item.href);
+      if (item.id === "blog" && pathname.startsWith("/blog")) return true;
+      return pathname === "/" && activeSection === item.id;
+    },
+    [pathname, activeSection],
+  );
+
+  const isActive = (item: NavItem) =>
+    pinned ? pinned === item.label : isCurrent(item);
+
+  // Unpin once the page has caught up with the click, or as soon as the
+  // visitor takes over scrolling themselves.
+  useEffect(() => {
+    if (!pinned) return;
+    const target = navItems.find((item) => item.label === pinned);
+    if (!target || isCurrent(target)) {
+      setPinned(null);
+      return;
+    }
+    const release = () => setPinned(null);
+    const timeout = window.setTimeout(release, 2500);
+    const events = ["wheel", "touchstart", "keydown"] as const;
+    events.forEach((e) => window.addEventListener(e, release, { passive: true }));
+    return () => {
+      window.clearTimeout(timeout);
+      events.forEach((e) => window.removeEventListener(e, release));
+    };
+  }, [pinned, isCurrent]);
+
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
     const onChange = () => mq.matches && setMenuOpen(false);
@@ -47,6 +109,7 @@ const Navigation = () => {
   const handleNav = useCallback(
     (item: NavItem) => {
       setMenuOpen(false);
+      setPinned(item.label);
       if (item.kind === "route") {
         if (item.sound) playBlip();
         nav.push(item.href);
@@ -69,19 +132,35 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 font-nippo font-bold">
-      {/* Desktop */}
-      <div className="hidden md:flex w-3/4 h-16 mx-auto justify-center gap-3 flex-row">
-        {navItems.map((item) => (
-          <motion.button
-            key={item.label}
-            className={buttonClass}
-            onClick={() => handleNav(item)}
-          >
-            {item.label}
-            <motion.div className="w-0 group-active:bg-orange-500 group-hover:w-full duration-300 h-0.5 bg-zinc-400" />
-          </motion.button>
-        ))}
+    <nav className="fixed top-4 inset-x-0 z-50  font-mono">
+
+      <div className="hidden md:flex justify-center px-6">
+        <div className="flex items-center gap-1 rounded-full bg-white/70 p-1.5 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-2xl dark:bg-zinc-900/70 dark:ring-white/10">
+          {navItems.map((item) => {
+            const active = isActive(item);
+            return (
+              <button
+                key={item.label}
+                className={`${buttonClass} ${
+                  active
+                    ? "text-white"
+                    : "text-zinc-600 hover:bg-zinc-900/5 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-zinc-100"
+                }`}
+                aria-current={active ? "page" : undefined}
+                onClick={() => handleNav(item)}
+              >
+                {active && (
+                  <motion.span
+                    layoutId="nav-selected"
+                    className={`absolute inset-0 -z-10 rounded-full ${ColorSchema.dark_maroon} shadow-md shadow-[#7a1620]/30 dark:bg-[#c23b4a] dark:shadow-[#c23b4a]/20`}
+                    transition={{ type: "spring", bounce: 0, duration: 0.35 }}
+                  />
+                )}
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Mobile */}
@@ -119,15 +198,24 @@ const Navigation = () => {
               <p className="text-lg font-climate-crisis text-zinc-700 dark:text-zinc-300">
                 Where would you like to go?
               </p>
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => handleNav(item)}
-                  className="text-left text-lg px-3 py-3 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:text-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) => {
+                const active = isActive(item);
+                return (
+                  <button
+                    key={item.label}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => handleNav(item)}
+                    className={`flex items-center justify-between text-left text-lg px-3 py-3 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 ${
+                      active
+                        ? "bg-[#7a1620]/10 text-[#7a1620] dark:bg-[#c23b4a]/15 dark:text-[#c23b4a]"
+                        : "text-zinc-700 dark:text-zinc-300"
+                    }`}
+                  >
+                    {item.label}
+                    {active && <span className="w-2 h-2 rounded-full bg-[#7a1620] dark:bg-[#c23b4a]" />}
+                  </button>
+                );
+              })}
             </motion.div>
           </>
         )}
