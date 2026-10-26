@@ -80,6 +80,7 @@ export const education: Education[] = [
         term: "Spring 2025",
         classes: [
           "Calculus III",
+          
           "Electricity and Magnetism",
           "Linear Algebra",
         ],
@@ -126,7 +127,7 @@ export const work: Work[] = [
     startDate: "October 2026",
     endDate: "Present",
     details: ["Offered after Bootcamp Project Placed Top 5"],
-   technologies_used: ["React", "NextJS", "MongoDB"]
+    technologies_used: ["React", "NextJS", "MongoDB"]
   },
   {
     company: "HACKMESA",

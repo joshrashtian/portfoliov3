@@ -6,6 +6,8 @@ import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
 import { CLOSE_SOUND, SELECT_SOUND, useSound } from "./useSound";
 import { ColorSchema } from "../color";
+import { AiOutlineAudio } from "react-icons/ai";
+import { GiSoundOff } from "react-icons/gi";
 
 /**
  * The nav lives in the root layout, so it can't hold the homepage's section
@@ -134,18 +136,17 @@ const Navigation = () => {
   return (
     <nav className="fixed top-4 inset-x-0 z-50  font-mono">
 
-      <div className="hidden md:flex justify-center px-6">
+      <div className="hidden md:flex gap-3 justify-center px-6">
         <div className="flex items-center gap-1 rounded-full bg-white/70 p-1.5 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-2xl dark:bg-zinc-900/70 dark:ring-white/10">
           {navItems.map((item) => {
             const active = isActive(item);
             return (
               <button
                 key={item.label}
-                className={`${buttonClass} ${
-                  active
-                    ? "text-white"
-                    : "text-zinc-600 hover:bg-zinc-900/5 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-zinc-100"
-                }`}
+                className={`${buttonClass} ${active
+                  ? "text-white"
+                  : "text-zinc-600 hover:bg-zinc-900/5 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-zinc-100"
+                  }`}
                 aria-current={active ? "page" : undefined}
                 onClick={() => handleNav(item)}
               >
@@ -160,7 +161,11 @@ const Navigation = () => {
               </button>
             );
           })}
+
         </div>
+        <button className="flex items-center text-xl w-12 justify-center gap-1 rounded-full bg-white/70 p-1.5 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-2xl dark:bg-zinc-900/70 dark:ring-white/10">
+          <GiSoundOff />
+        </button>
       </div>
 
       {/* Mobile */}
@@ -205,17 +210,17 @@ const Navigation = () => {
                     key={item.label}
                     aria-current={active ? "page" : undefined}
                     onClick={() => handleNav(item)}
-                    className={`flex items-center justify-between text-left text-lg px-3 py-3 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 ${
-                      active
-                        ? "bg-[#7a1620]/10 text-[#7a1620] dark:bg-[#c23b4a]/15 dark:text-[#c23b4a]"
-                        : "text-zinc-700 dark:text-zinc-300"
-                    }`}
+                    className={`flex items-center justify-between text-left text-lg px-3 py-3 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 ${active
+                      ? "bg-[#7a1620]/10 text-[#7a1620] dark:bg-[#c23b4a]/15 dark:text-[#c23b4a]"
+                      : "text-zinc-700 dark:text-zinc-300"
+                      }`}
                   >
                     {item.label}
                     {active && <span className="w-2 h-2 rounded-full bg-[#7a1620] dark:bg-[#c23b4a]" />}
                   </button>
                 );
               })}
+
             </motion.div>
           </>
         )}

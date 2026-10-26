@@ -13,6 +13,7 @@ import {
   IoCubeOutline,
   IoMail,
   IoLocationSharp,
+  IoDocument,
 } from "react-icons/io5";
 import Tilt from "react-parallax-tilt";
 import Link from "next/link";
@@ -109,11 +110,11 @@ export default function HomeClient({
 
                   <div className="relative z-10 flex flex-wrap items-start justify-between gap-4">
                     <span className={`inline-flex items-center gap-2 rounded-full ${ColorSchema.ink_text} text-base font-mono font-black  dark:bg-white dark:text-black`}>
-<IoLocationSharp />
+                      <IoLocationSharp />
                       San Luis Obispo, CA
                     </span>
                     <div className={`text-right text-sm font-mono ${ColorSchema.muted_text}`}>
-                      <p>Software Engineer</p>
+
                       <p>Cal Poly CSC Student</p>
                     </div>
                   </div>
@@ -191,28 +192,27 @@ export default function HomeClient({
                     </div>
                     <div className="flex flex-row items-center gap-3">
                       <button
-                      onClick={() => {setIsFlipped((prev) => !prev)}}
+                        onClick={() => { setIsFlipped((prev) => !prev) }}
 
-                      className={`inline-flex shrink-0 items-center gap-2 self-start rounded-full ${ColorSchema.blush_maroon} px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 sm:self-auto`}
-                    >
-                     Contact <IoMail  />
-                    </button>
-                    <Link
-                      href="/resume.pdf"
-                      target="_blank"
-                      className={`inline-flex shrink-0 items-center gap-2 self-start rounded-full ${ColorSchema.core_maroon} ${ColorSchema.hover_maroon} px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 sm:self-auto`}
-                    >
-                      View Resume <IoArrowForward />
+                        className={`inline-flex shrink-0 items-center gap-2 self-start rounded-full ${ColorSchema.blush_maroon} px-6 py-3 font-semibold transition-all duration-300 hover:scale-105 sm:self-auto`}
+                      >
+                        Contact <IoMail />
+                      </button>
+                      <Link
+                        href="/resume.pdf"
+                        target="_blank"
+                        className={`inline-flex shrink-0 items-center gap-2 self-start rounded-full ${ColorSchema.core_maroon} ${ColorSchema.hover_maroon} px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 sm:self-auto`}
+                      >
+                        View Resume <IoDocument />
                       </Link>
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div
-                className={`absolute inset-0 h-full ${
-                  isFlipped ? "" : "pointer-events-none"
-                }`}
+                className={`absolute inset-0 h-full ${isFlipped ? "" : "pointer-events-none"
+                  }`}
                 style={{
                   backfaceVisibility: "hidden",
                   transform: "rotateY(180deg)",
