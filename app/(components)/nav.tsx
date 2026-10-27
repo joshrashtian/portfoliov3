@@ -4,7 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import { usePathname, useRouter } from "next/navigation";
-import { CLOSE_SOUND, SELECT_SOUND, useSound } from "./useSound";
+import {
+  CLOSE_SOUND,
+  SELECT_SOUND,
+  setSoundEnabled,
+  useSound,
+  useSoundEnabled,
+} from "./useSound";
 import { ColorSchema } from "../color";
 import { AiOutlineAudio } from "react-icons/ai";
 import { GiSoundOff } from "react-icons/gi";
@@ -36,6 +42,7 @@ const Navigation = () => {
   const pathname = usePathname();
   const playBlip = useSound(SELECT_SOUND);
   const playClose = useSound(CLOSE_SOUND);
+  const soundOn = useSoundEnabled();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   // The item just clicked. The pill jumps straight to it and stays put while
@@ -127,6 +134,12 @@ const Navigation = () => {
     [nav, pathname, playBlip],
   );
 
+  const toggleSound = () => {
+    setSoundEnabled(!soundOn);
+    // Blip on the way in so turning it on confirms itself.
+    if (!soundOn) playBlip();
+  };
+
   const toggleMenu = () => {
     if (menuOpen) playClose();
     else playBlip();
@@ -163,8 +176,13 @@ const Navigation = () => {
           })}
 
         </div>
-        <button className="flex items-center text-xl w-12 justify-center gap-1 rounded-full bg-white/70 p-1.5 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-2xl dark:bg-zinc-900/70 dark:ring-white/10">
-          <GiSoundOff />
+        <button
+          aria-label={soundOn ? "Turn sound off" : "Turn sound on"}
+          aria-pressed={soundOn}
+          onClick={toggleSound}
+          className="flex items-center text-xl w-12 justify-center gap-1 rounded-full bg-white/70 p-1.5 text-zinc-600 shadow-lg shadow-black/5 ring-1 ring-black/5 backdrop-blur-2xl transition-colors hover:text-zinc-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 dark:bg-zinc-900/70 dark:text-zinc-400 dark:ring-white/10 dark:hover:text-zinc-100 dark:focus-visible:ring-[#c23b4a]/50"
+        >
+          {soundOn ? <AiOutlineAudio /> : <GiSoundOff />}
         </button>
       </div>
 

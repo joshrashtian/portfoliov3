@@ -14,6 +14,7 @@ import {
   IoGlobe,
   IoLogoApple,
   IoLogoCss3,
+  IoLogoNpm,
   IoLogoReact,
 } from "react-icons/io5";
 import MESAMobileImage1 from "../../(assets)/images/projects/mesamobile1.png";
@@ -23,6 +24,7 @@ import MESAMobileProfile from "../../(assets)/images/projects/mesamobile-profile
 import MESAMobilePost from "../../(assets)/images/projects/mesamobile-post.webp";
 import { Playwrite_US_Modern } from "next/font/google";
 import { IoLogoGithub } from "react-icons/io";
+import { SiRust } from "react-icons/si";
 
 const playwrite = Playwrite_US_Modern({ weight: "400" });
 
@@ -81,24 +83,14 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
               height={100}
               className="w-full h-auto rounded-md"
             />
-            <p
-              className={`${playwrite.className} mt-3 text-center text-sm text-zinc-500`}
-            >
-              the calendar view :)
-            </p>
-          </div>
+                    </div>
         </div>
         <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%]">
           <div className="flex flex-row flex-wrap w-full gap-3 items-center">
             <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left">
               RiseByDay
             </p>
-            <p
-              className={`font-black  bg-red-900 -rotate-5  text-white p-1 px-3 ${playwrite.className}`}
-            >
-              Under Construction
-            </p>
-          </div>
+                     </div>
           <p className="text-base xl:text-lg text-gray-500 font-light text-left">
             A sleek, modern task creation app built for Students, by Students.
           </p>
@@ -182,6 +174,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
                 d="M13.912 0a8.72 8.72 0 0 0-8.308 6.139c1.05-.515 2.18-.845 3.342-.976 2.415-3.363 7.4-3.412 9.88-.097 2.48 3.315 1.025 8.084-2.883 9.45a6.131 6.131 0 0 1-.3 2.762 8.72 8.72 0 0 0 3.01-1.225A8.72 8.72 0 0 0 13.913 0zm.082 6.451a2.284 2.284 0 1 0-.15 4.566 2.284 2.284 0 0 0 .15-4.566zm-5.629.27a8.72 8.72 0 0 0-3.031 1.235 8.72 8.72 0 1 0 13.06 9.9131 10.173 10.174 0 0 1-3.343.965 6.125 6.125 0 1 1-7.028-9.343 6.114 6.115 0 0 1 .342-2.772zm1.713 6.27a2.284 2.284 0 0 0-2.284 2.283 2.284 2.284 0 0 0 2.284 2.284 2.284 2.284 0 0 0 2.284-2.284 2.284 2.284 0 0 0-2.284-2.284z"
               />
             </svg>
+            <SiRust className="w-8 h-8 text-gray-900 dark:text-gray-100" />
             {/* Python */}
             <svg
               width="32"
@@ -252,7 +245,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           </div>
         </div>
         <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:right-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%] xl:items-end">
-          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left xl:text-right">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left xl:text-right">
             MESAConnect
           </p>
           <p className="text-base xl:text-lg text-gray-500 text-left xl:text-right">
@@ -416,11 +409,7 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
                 height={740}
                 className="w-full h-auto rounded-md"
               />
-              <p
-                className={`${playwrite.className} mt-2 text-center text-xs text-zinc-500`}
-              >
-                your profile
-              </p>
+             
             </div>
           </div>
           <div className="relative mt-8 w-[130px] rotate-3 duration-500 group-hover:rotate-6 sm:w-[160px] xl:w-[170px]">
@@ -433,16 +422,12 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
                 height={740}
                 className="w-full h-auto rounded-md"
               />
-              <p
-                className={`${playwrite.className} mt-2 text-center text-xs text-zinc-500`}
-              >
-                admission posts!
-              </p>
+              
             </div>
           </div>
         </div>
         <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:left-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%]">
-          <p className="text-3xl sm:text-4xl xl:text-5xl font-semibold text-left">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left">
             MESAMobile
           </p>
           <p className="text-base xl:text-lg text-gray-500 text-left">
@@ -529,6 +514,60 @@ export const Projects = forwardRef<HTMLDivElement, object>((props, ref) => {
           <div className="flex flex-row flex-wrap items-center gap-2">
             <ProjectLink href="https://apps.apple.com/us/app/mesamobile/id6504261825" icon={<IoLogoApple />}>
               App Store
+            </ProjectLink>
+          </div>
+        </div>
+      </button>
+      <button className="group relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-lg p-5 duration-500 xl:h-72 xl:flex-row xl:gap-2">
+        <div className="relative order-2 w-[280px] -rotate-2 duration-500 group-hover:-rotate-4 group-hover:scale-[1.02] sm:w-[380px] xl:absolute xl:left-16 xl:order-none xl:w-[440px] xl:translate-y-6 xl:-rotate-3">
+          <div className="absolute -top-3 right-10 z-20 h-7 w-16 rotate-6 border border-white/40 bg-stone-300/80 shadow-sm dark:bg-stone-400/60" />
+          <div className="rounded-xl bg-white p-2.5 shadow-2xl ring-1 ring-black/5">
+            <pre className="whitespace-pre-wrap break-words rounded-md bg-zinc-900 p-4 text-left font-mono text-[11px] leading-relaxed text-zinc-300 sm:text-xs">
+              <span className="text-zinc-500">$ npm install hevy-javascript</span>
+              {"\n\n"}
+              <span className="text-purple-400">import</span> {"{ createHevyClient }"}{" "}
+              <span className="text-purple-400">from</span>{" "}
+              <span className="text-emerald-400">&quot;hevy-javascript&quot;</span>;{"\n\n"}
+              <span className="text-purple-400">const</span> hevy ={" "}
+              <span className="text-blue-400">createHevyClient</span>({"{ apiKey }"});{"\n"}
+              <span className="text-purple-400">const</span> count ={" "}
+              <span className="text-purple-400">await</span> hevy.
+              <span className="text-blue-400">getTotalWorkouts</span>();
+            </pre>
+          </div>
+        </div>
+        <div className="order-1 z-10 flex w-full flex-col items-start justify-center gap-2 xl:absolute xl:right-10 xl:top-0 xl:order-none xl:h-full xl:w-auto xl:max-w-[45%] xl:items-end">
+          <p className="text-3xl sm:text-4xl xl:text-5xl font-black text-left xl:text-right">
+            hevy-javascript
+          </p>
+          <p className="text-base xl:text-lg text-gray-500 text-left xl:text-right">
+            An unofficial TypeScript client and React bindings for the Hevy
+            workout API, published on npm.
+          </p>
+          <div className="flex flex-row flex-wrap gap-3 items-center">
+            {/* TypeScript */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="TypeScript"
+              role="img"
+              viewBox="0 0 512 512"
+              className="w-8 h-8"
+            >
+              <rect width="512" height="512" rx="15%" fill="#3178c6" />
+              <path
+                fill="#ffffff"
+                d="m233 284h64v-41H118v41h64v183h51zm84 173c8.1 4.2 18 7.3 29 9.4s23 3.1 35 3.1c12 0 23-1.1 34-3.4c11-2.3 20-6.1 28-11c8.1-5.3 15-12 19-21s7.1-19 7.1-32c0-9.1-1.4-17-4.1-24s-6.6-13-12-18c-5.1-5.3-11-10-18-14s-15-8.2-24-12c-6.6-2.7-12-5.3-18-7.9c-5.2-2.6-9.7-5.2-13-7.8c-3.7-2.7-6.5-5.5-8.5-8.4c-2-3-3-6.3-3-10c0-3.4.89-6.5 2.7-9.3s4.3-5.1 7.5-7.1c3.2-2 7.2-3.5 12-4.6c4.7-1.1 9.9-1.6 16-1.6c4.2 0 8.6.31 13 .94c4.6.63 9.3 1.6 14 2.9c4.7 1.3 9.3 2.9 14 4.9c4.4 2 8.5 4.3 12 6.9v-47c-7.6-2.9-16-5.1-25-6.5s-19-2.1-31-2.1c-12 0-23 1.3-34 3.8s-20 6.5-28 12c-8.1 5.4-14 12-19 21c-4.7 8.4-7 18-7 30c0 15 4.3 28 13 38c8.6 11 22 19 39 27c6.9 2.8 13 5.6 19 8.3s11 5.5 15 8.4c4.3 2.9 7.7 6.1 10 9.5c2.5 3.4 3.8 7.4 3.8 12c0 3.2-.78 6.2-2.3 9s-3.9 5.2-7.1 7.2s-7.1 3.6-12 4.8c-4.7 1.1-10 1.7-17 1.7c-11 0-22-1.9-32-5.7c-11-3.8-21-9.5-28.1-15.44z"
+              />
+            </svg>
+            <IoLogoReact className="w-8 h-8 text-blue-500" />
+            <IoLogoNpm className="w-8 h-8 text-[#cb3837]" />
+          </div>
+          <div className="flex flex-row flex-wrap items-center gap-2">
+            <ProjectLink href="https://www.npmjs.com/package/hevy-javascript" icon={<IoLogoNpm />} variant="primary" color="bg-[#cb3837]">
+              View on npm
+            </ProjectLink>
+            <ProjectLink href="https://github.com/joshrashtian/hevy-javascript-api" icon={<IoLogoGithub />}>
+              GitHub
             </ProjectLink>
           </div>
         </div>

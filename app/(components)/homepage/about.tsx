@@ -9,9 +9,9 @@ import { ColorSchema } from "../../color";
 // Data (single source of truth)
 // ---------------------------------------------------------------------------
 
-const LANGUAGES = ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"];
-const FRAMEWORKS = ["React", "Next.js", "Node.js", "Express", "TailwindCSS"];
-const TOOLS = ["Firebase", "Supabase", "PostgreSQL", "Unity"];
+const LANGUAGES = ["JavaScript", "TypeScript", "Python", "Java", "C", "C++", "Rust", "SQL"];
+const FRAMEWORKS = ["React", "Next.js", "Node.js", "Express", "TailwindCSS", "FastAPI", "Tauri"];
+const TOOLS = ["Firebase", "Supabase", "PostgreSQL", "Unity", "Vim"];
 
 // Bio facts, one place to edit. Update HOME if/when your "base" location
 // changes — everything below, including the globe, reads from this.
