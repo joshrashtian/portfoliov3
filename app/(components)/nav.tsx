@@ -238,7 +238,16 @@ const Navigation = () => {
                   </button>
                 );
               })}
-
+              <button
+                aria-pressed={soundOn}
+                onClick={toggleSound}
+                className="mt-1 flex items-center justify-between text-left text-lg px-3 py-3 rounded-lg border-t border-zinc-200 text-zinc-700 hover:bg-zinc-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7a1620]/50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
+              >
+                {soundOn ? "Sound on" : "Sound off"}
+                <span className="text-xl">
+                  {soundOn ? <AiOutlineAudio /> : <GiSoundOff />}
+                </span>
+              </button>
             </motion.div>
           </>
         )}

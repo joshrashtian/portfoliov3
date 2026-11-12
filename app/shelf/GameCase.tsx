@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { IconType } from "react-icons";
 import { IoRepeat, IoStar } from "react-icons/io5";
@@ -13,6 +14,7 @@ import {
   SiWii,
   SiWiiu,
 } from "react-icons/si";
+import { ColorSchema } from "../color";
 import { coverFor, type Cover } from "../extra/games/covers";
 import type { Game } from "../extra/games/shelf";
 import { XboxLogo } from "./XboxLogo";
@@ -273,10 +275,14 @@ export const GameCase = ({ game }: { game: Game }) => {
   );
 };
 
-const platformName = (game: Game) => {
+export const platformName = (game: Game) => {
   const { box } = artFor(game);
   return box.key === "pc" ? "PC" : box.cover;
 };
+
+/** The rating tiers: gold from 95, orange from 90. */
+export const ratingTone = (rating: number) =>
+  rating >= 95 ? "text-yellow-600" : rating >= 90 ? "text-orange-500" : "";
 
 /** "17 Feb": the year is already the row's heading. */
 const shortDate = (iso: string) =>
@@ -297,7 +303,14 @@ const detailRules = (count: number) =>
       `.shelf-row:has(> .game-shelf > :nth-child(${i + 1}) details[open]) > .shelf-details > :nth-child(${i + 1}){display:flex}`,
   ).join("\n");
 
-export const GameShelf = ({ games }: { games: Game[] }) => {
+export const GameShelf = ({
+  games,
+  reviewed,
+}: {
+  games: Game[];
+  /** Slugs with a review page; their detail line links to it. */
+  reviewed?: ReadonlySet<string>;
+}) => {
   const list = byPlatform(games);
   return (
     <div className="shelf-row">
@@ -307,22 +320,41 @@ export const GameShelf = ({ games }: { games: Game[] }) => {
           <GameCase key={game.slug} game={game} />
         ))}
       </ul>
-      {/* Visual twin of each case's sr-only payload, so hidden from AT. */}
-      <div className="shelf-details" aria-hidden="true">
+      {/*
+        The text is a visual twin of each case's sr-only payload, so it's
+        hidden from AT; the review link isn't, as it's the only way there.
+        Closed cases' lines are display:none, so their links aren't tabbable.
+      */}
+      <div className="shelf-details">
         {list.map((game) => (
           <p key={game.slug} className="shelf-detail">
-            <span className="detail-title">{game.title}</span>
+            <span className="detail-title" aria-hidden="true">
+              {game.title}
+            </span>
             <span className="detail-meta flex flex-row gap-4">
-              {platformName(game)}
-              {game.rating && (
+              <span aria-hidden="true">{platformName(game)}</span>
+              {/* A 0 is a backlog placeholder, not a score. */}
+              {game.rating ? (
                 <span
-                  className={`${game.rating >= 95 ? "text-yellow-600" : game.rating >= 90 ? "text-orange-500" : ""} flex flex-row gap-1 items-center`}
+                  aria-hidden="true"
+                  className={`${ratingTone(game.rating)} flex flex-row gap-1 items-center`}
                 >
                   <IoStar />
-                  {game?.rating}
+                  {game.rating}
                 </span>
-              )}
-              {game.status}
+              ) : null}
+              {game.status ? (
+                <span aria-hidden="true">{game.status}</span>
+              ) : null}
+              {reviewed?.has(game.slug) ? (
+                <Link
+                  href={`/shelf/review/${game.slug}`}
+                  aria-label={`Read the ${game.title} review`}
+                  className={`${ColorSchema.text_maroon} underline decoration-dotted underline-offset-4 hover:decoration-solid`}
+                >
+                  Review →
+                </Link>
+              ) : null}
             </span>
           </p>
         ))}

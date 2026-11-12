@@ -1,6 +1,7 @@
 import React from "react";
 import { games, type Game } from "../extra/games/shelf";
 import { GameShelf, PlayingStack } from "./GameCase";
+import { getReviews } from "./reviews";
 
 /*
   Undated games can't go in a year, so they get a row per status, in this
@@ -86,7 +87,8 @@ const stats = (list: Game[]) => {
     .join(" · ");
 };
 
-const ShelfPage = () => {
+const ShelfPage = async () => {
+  const reviewed = new Set((await getReviews()).keys());
   return (
     <div className="shelf flex flex-col gap-20 p-6 pt-24 sm:px-12">
       {groupRows().map(([year, yearGames], i) => (
@@ -96,7 +98,7 @@ const ShelfPage = () => {
             <p className="shelf-stats">{stats(yearGames)}</p>
           </header>
           <div className="shelf-body">
-            <GameShelf games={yearGames} />
+            <GameShelf games={yearGames} reviewed={reviewed} />
             {i === 0 && playing.length ? <PlayingStack games={playing} /> : null}
           </div>
         </section>

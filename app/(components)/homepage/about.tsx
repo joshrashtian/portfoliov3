@@ -1,20 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Globe from "./globe";
 import LAACImage from "../../(assets)/images/LAAC.jpg";
 import Image from "next/image";
 import SLOMap from "../../(assets)/images/front_page/SLOMap.png";
 import { ColorSchema } from "../../color";
-// ---------------------------------------------------------------------------
-// Data (single source of truth)
-// ---------------------------------------------------------------------------
+
 
 const LANGUAGES = ["JavaScript", "TypeScript", "Python", "Java", "C", "C++", "Rust", "SQL"];
 const FRAMEWORKS = ["React", "Next.js", "Node.js", "Express", "TailwindCSS", "FastAPI", "Tauri"];
 const TOOLS = ["Firebase", "Supabase", "PostgreSQL", "Unity", "Vim"];
 
-// Bio facts, one place to edit. Update HOME if/when your "base" location
-// changes — everything below, including the globe, reads from this.
 const HOME = {
   city: "San Luis Obispo, CA",
   coordinates: [35.28, -120.66] as const,
@@ -24,8 +19,6 @@ const HOME = {
 type CodeToken = { text: string; className?: string };
 type Snippet = { lines: CodeToken[][] };
 
-// Each language "writes" the same three facts about you in its own syntax.
-// Add a language by adding one entry here — no JSX duplication required.
 const SNIPPETS: Record<string, Snippet> = {
   "C++": {
     lines: [
@@ -104,9 +97,7 @@ const SNIPPETS: Record<string, Snippet> = {
 
 const LANGUAGE_ORDER = ["C++", "Java", "TypeScript"];
 
-// ---------------------------------------------------------------------------
-// Subcomponents
-// ---------------------------------------------------------------------------
+
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="text-sm text-zinc-400 dark:text-zinc-500">{children}</p>;

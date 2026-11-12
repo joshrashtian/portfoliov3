@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.notion.so",
       },
+      // Review notes' `header_img` (app/(obsidian)).
+      {
+        protocol: "https",
+        hostname: "images.launchbox-app.com",
+      },
     ],
   },
 };
